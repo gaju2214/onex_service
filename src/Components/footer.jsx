@@ -221,7 +221,7 @@ export function Footer() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                    © 2025 OnexDigiserv. All rights reserved.
+                    © 2025 Onex Services. All rights reserved.
                 </motion.p>
             </div>
         </footer>
