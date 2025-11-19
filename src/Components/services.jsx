@@ -2,18 +2,42 @@ import { motion } from "framer-motion"
 import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, Instagram, Youtube, Facebook } from "lucide-react"
 
 const items = [
-    { title: "Original Content Creation", icon: PenTool },
-    { title: "Multiple Marketing Platforms", icon: Globe },
-    { title: "Web Application Development", icon: Code },
-    { title: "Social Media Marketing", icon: Share2 },
-    { title: "Digital Consultancy", icon: Users },
-    { title: "Meta Ads and Campaign", icon: Megaphone },
+    { 
+        title: "Original Content Creation", 
+        icon: PenTool,
+        description: "Craft compelling blogs, videos, infographics, and visual content that resonates with your audience and drives engagement across all digital platforms."
+    },
+    { 
+        title: "Multiple Marketing Platforms", 
+        icon: Globe,
+        description: "Strategic multi-channel presence across search engines, social media, email, and paid advertising to maximize your brand's reach and visibility."
+    },
+    { 
+        title: "Web Application Development", 
+        icon: Code,
+        description: "Full-stack development with React, Node.js, and modern frameworks delivering scalable, secure, and high-performance web applications tailored to your business."
+    },
+    { 
+        title: "Social Media Marketing", 
+        icon: Share2,
+        description: "Build brand awareness, foster community engagement, and convert followers into customers through data-driven social media strategies and campaigns."
+    },
+    { 
+        title: "Digital Consultancy", 
+        icon: Users,
+        description: "Expert guidance on digital strategy, technology selection, and business transformation to help you achieve your goals with measurable ROI."
+    },
+    { 
+        title: "Meta Ads and Campaign", 
+        icon: Megaphone,
+        description: "Targeted Facebook and Instagram advertising campaigns with precise audience targeting, optimized budgets, and conversion-focused creative execution."
+    },
 ]
 
 const platforms = [
-    { name: "Instagram", icon: Instagram, color: "#bc1888" },
-    { name: "YouTube", icon: Youtube, color: "#FF0000" },
-    { name: "Facebook", icon: Facebook, color: "#1877F2" },
+    { name: "Instagram", icon: Instagram, color: "#bc1888", description: "Visual storytelling and engagement" },
+    { name: "YouTube", icon: Youtube, color: "#FF0000", description: "Video marketing and channel growth" },
+    { name: "Facebook", icon: Facebook, color: "#1877F2", description: "Community building and advertising" },
 ]
 
 export function Services() {
@@ -73,7 +97,7 @@ export function Services() {
                                 <item.icon className="h-8 w-8 text-[var(--brand-blue)] transition-colors group-hover:text-[var(--brand-purple)]" />
                             </div>
                             <p className="mt-2 text-sm text-foreground/70">
-                                End-to-end support from strategy to production with premium, measurable outcomes.
+                                {item.description}
                             </p>
                         </motion.div>
                     ))}
