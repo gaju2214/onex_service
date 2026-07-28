@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Moon, Sun } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link, NavLink } from "react-router-dom"
+import { useIsMobile } from "../Hooks/use-mobile"
 import { useTheme } from "./theme-provider"
 
 const navItems = [
@@ -16,6 +17,7 @@ export function Navbar() {
     const [solid, setSolid] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const { theme, setTheme } = useTheme()
+    const isMobile = useIsMobile()
 
     useEffect(() => {
         const onScroll = () => setSolid(window.scrollY > 24)
@@ -23,6 +25,10 @@ export function Navbar() {
         window.addEventListener("scroll", onScroll, { passive: true })
         return () => window.removeEventListener("scroll", onScroll)
     }, [])
+
+    useEffect(() => {
+        if (!isMobile) setMenuOpen(false)
+    }, [isMobile])
 
     const toggleTheme = () => {
         setTheme(theme === "dark" ? "light" : "dark")

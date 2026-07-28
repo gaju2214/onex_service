@@ -18,11 +18,11 @@ const clients = [
 
 function LogoCard({ client }) {
     return (
-        <div className="mx-4 flex h-24 w-44 flex-shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border border-border bg-foreground/5 px-4 backdrop-blur">
+        <div className="mx-3 flex h-20 w-36 flex-shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border border-border bg-foreground/5 px-3 backdrop-blur sm:mx-4 sm:h-24 sm:w-44 sm:px-4">
             <img
                 src={client.logo}
                 alt={`${client.name} logo`}
-                className="h-12 w-12 rounded-full border border-border object-cover"
+                className="h-10 w-10 rounded-full border border-border object-cover sm:h-12 sm:w-12"
                 loading="lazy"
                 onError={(e) => {
                     e.currentTarget.style.display = "none"
@@ -44,7 +44,7 @@ export function ClientLogos() {
             aria-label="Our Clients"
         >
             <motion.h2
-                className="font-heading text-2xl font-bold md:text-3xl text-center"
+                className="font-heading text-xl font-bold text-center sm:text-2xl md:text-3xl"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}

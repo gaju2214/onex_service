@@ -19,7 +19,10 @@ export function FloatingStickers() {
             {stickers.map((sticker, index) => (
                 <motion.div
                     key={index}
-                    className="absolute text-4xl opacity-20"
+                    className={[
+                        "absolute text-2xl opacity-20 sm:text-3xl md:text-4xl",
+                        index % 2 === 1 ? "hidden sm:block" : "",
+                    ].join(" ")}
                     initial={{
                         x: Math.random() * window.innerWidth,
                         y: window.innerHeight + 100,
