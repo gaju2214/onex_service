@@ -13,6 +13,16 @@ const reels = [
     { permalink: "https://www.instagram.com/reel/DbHaGSOSCfP/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
 ]
 
+const REELS_PER_SLIDE = 3
+
+function chunk(items, size) {
+    const groups = []
+    for (let i = 0; i < items.length; i += size) {
+        groups.push(items.slice(i, i + size))
+    }
+    return groups
+}
+
 function loadInstagramEmbedScript() {
     if (window.instgrm) {
         window.instgrm.Embeds.process()
@@ -27,6 +37,29 @@ function loadInstagramEmbedScript() {
     script.async = true
     script.onload = () => window.instgrm && window.instgrm.Embeds.process()
     document.body.appendChild(script)
+}
+
+function ReelCard({ reel, i }) {
+    return (
+        <motion.div
+            className="mx-auto flex w-full max-w-[380px] flex-col items-center rounded-2xl border border-border bg-foreground/5 p-4 backdrop-blur"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+        >
+            <blockquote
+                className="instagram-media"
+                data-instgrm-permalink={reel.permalink}
+                data-instgrm-version="14"
+                style={{ minHeight: "400px", background: "transparent" }}
+            />
+            <div className="mt-3 text-center">
+                <div className="text-sm font-semibold">{reel.clientName}</div>
+                <div className="text-xs text-foreground/70">{reel.resultCaption}</div>
+            </div>
+        </motion.div>
+    )
 }
 
 export function ReelsShowcase() {
@@ -57,26 +90,13 @@ export function ReelsShowcase() {
                 <div className="mt-8">
                     <Carousel opts={{ align: "start" }}>
                         <CarouselContent>
-                            {reels.map((reel, i) => (
-                                <CarouselItem key={reel.permalink} className="basis-full">
-                                    <motion.div
-                                        className="mx-auto flex max-w-[420px] flex-col items-center rounded-2xl border border-border bg-foreground/5 p-4 backdrop-blur"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, amount: 0.3 }}
-                                        transition={{ duration: 0.5, delay: i * 0.1 }}
-                                    >
-                                        <blockquote
-                                            className="instagram-media"
-                                            data-instgrm-permalink={reel.permalink}
-                                            data-instgrm-version="14"
-                                            style={{ minHeight: "400px", background: "transparent" }}
-                                        />
-                                        <div className="mt-3 text-center">
-                                            <div className="text-sm font-semibold">{reel.clientName}</div>
-                                            <div className="text-xs text-foreground/70">{reel.resultCaption}</div>
-                                        </div>
-                                    </motion.div>
+                            {chunk(reels, REELS_PER_SLIDE).map((group, groupIndex) => (
+                                <CarouselItem key={group[0].permalink} className="basis-full">
+                                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                        {group.map((reel, i) => (
+                                            <ReelCard key={reel.permalink} reel={reel} i={groupIndex * REELS_PER_SLIDE + i} />
+                                        ))}
+                                    </div>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
