@@ -9,8 +9,16 @@ const reels = [
     { permalink: "https://www.instagram.com/reel/DaSwzylt-Uy/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
     { permalink: "https://www.instagram.com/reel/DbRwwC4obuS/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
     { permalink: "https://www.instagram.com/reel/DZ42gSeML2P/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DZSLuJ1ANEw/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
     { permalink: "https://www.instagram.com/reel/DaNrhQkIWDi/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
     { permalink: "https://www.instagram.com/reel/DbHaGSOSCfP/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DamA3BjBJnm/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DTB-Lk3DNq3/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DazSdldNTF7/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DZ4-NziONpf/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DZEuPTWNK2x/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DZI5Bftz5QW/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DZWpSwhqAtW/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
 ]
 
 const REELS_PER_SLIDE = 3
