@@ -14,10 +14,3 @@ export function loadInstagramEmbedScript() {
     document.body.appendChild(script)
 }
 
-export function chunk(items, size) {
-    const groups = []
-    for (let i = 0; i < items.length; i += size) {
-        groups.push(items.slice(i, i + size))
-    }
-    return groups
-}

@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
-import { loadInstagramEmbedScript, chunk } from "../lib/instagramEmbed"
+import { loadInstagramEmbedScript } from "../lib/instagramEmbed"
+import { chunk } from "../lib/utils"
 
 // Real reel links, sourced from public/reel.txt. Per-reel client/result
 // mapping wasn't supplied, so captions stay generic until that's available.

@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
-import { loadInstagramEmbedScript, chunk } from "../lib/instagramEmbed"
+import { loadInstagramEmbedScript } from "../lib/instagramEmbed"
+import { chunk } from "../lib/utils"
 
 // Real client Instagram handles, same source as ClientLogos.jsx
 // (public/clients_logo/clients_details).

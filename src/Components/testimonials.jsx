@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
+import { chunk } from "../lib/utils"
 
 // Real client names/logos, sourced from public/clients_logo/clients_details.
 // Quote text is still placeholder pending real written reviews from these
@@ -73,43 +74,44 @@ const testimonials = [
     },
 ]
 
+const TESTIMONIALS_PER_SLIDE = 3
+
+function TestimonialCard({ t, i }) {
+    return (
+        <motion.article
+            className="flex aspect-square h-full flex-col rounded-2xl border border-border bg-foreground/5 p-5 backdrop-blur"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+        >
+            <div className="flex items-center gap-3">
+                <img
+                    src={t.logo}
+                    alt={`${t.name} logo`}
+                    className="h-10 w-10 flex-shrink-0 rounded-full border border-border object-cover"
+                    loading="lazy"
+                />
+                <div className="min-w-0">
+                    <div className="truncate text-sm font-semibold">{t.name}</div>
+                    <div className="truncate text-xs text-foreground/70">{t.role}</div>
+                </div>
+            </div>
+            <p className="mt-4 flex-1 overflow-y-auto text-sm text-foreground/80">
+                "{t.quote}"
+            </p>
+        </motion.article>
+    )
+}
+
 export function Testimonials() {
     return (
         <section
             id="testimonials"
-            className="scroll-mt-24 bg-[rgba(255,255,255,0.02)] py-16 md:py-24 relative overflow-hidden"
+            className="scroll-mt-24 border-t border-border py-16 md:py-24"
             aria-label="Testimonials"
         >
-            {/* Animated background elements */}
-            <div className="absolute inset-0 pointer-events-none">
-                <motion.div
-                    className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-20 right-20 w-24 h-24 bg-accent/10 rounded-full blur-xl"
-                    animate={{
-                        scale: [1.2, 1, 1.2],
-                        opacity: [0.4, 0.2, 0.4],
-                    }}
-                    transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1,
-                    }}
-                />
-            </div>
-
-            <div className="mx-auto max-w-6xl px-4 relative z-10">
+            <div className="mx-auto max-w-6xl px-4">
                 <motion.h2
                     className="font-heading text-3xl font-bold md:text-4xl text-center"
                     initial={{ opacity: 0, y: 10 }}
@@ -123,94 +125,13 @@ export function Testimonials() {
                 <div className="mt-8">
                     <Carousel opts={{ align: "start", autoPlay: true }}>
                         <CarouselContent>
-                            {testimonials.map((t, i) => (
-                                <CarouselItem key={i} className="basis-full sm:basis-1/2 lg:basis-[calc(33.333%-1rem)]">
-                                    <motion.article
-                                        className="h-full relative rounded-2xl bg-foreground/5 p-4 backdrop-blur"
-                                        initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                        viewport={{ once: true, amount: 0.3 }}
-                                        transition={{
-                                            duration: 0.6,
-                                            delay: i * 0.1,
-                                            ease: "easeOut"
-                                        }}
-                                        whileHover={{
-                                            scale: 1.05,
-                                            boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                                            transition: { duration: 0.3 }
-                                        }}
-                                    >
-                                        <motion.svg
-                                            className="absolute inset-0 w-full h-full"
-                                            viewBox="0 0 100 100"
-                                            preserveAspectRatio="none"
-                                            initial={{ pathLength: 0 }}
-                                            whileInView={{ pathLength: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 2, delay: 1, ease: "easeInOut" }}
-                                        >
-                                            <motion.path
-                                                d="M 0 16 Q 0 0 16 0 L 84 0 Q 100 0 100 16 L 100 84 Q 100 100 84 100 L 16 100 Q 0 100 0 84 Z"
-                                                fill="none"
-                                                stroke="url(#gradient)"
-                                                strokeWidth="0.5"
-                                                pathLength={1}
-                                            />
-                                            <defs>
-                                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                    <stop offset="0%" stopColor="var(--brand-gold)" />
-                                                    <stop offset="50%" stopColor="transparent" />
-                                                    <stop offset="100%" stopColor="var(--brand-graphite)" />
-                                                </linearGradient>
-                                            </defs>
-                                        </motion.svg>
-                                        <motion.div
-                                            className="flex items-center gap-3"
-                                            initial={{ opacity: 0, x: -20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.5, delay: i * 0.1 + 0.2 }}
-                                        >
-                                            <motion.img
-                                                src={t.logo}
-                                                alt={`${t.name} logo`}
-                                                className="h-8 w-8 rounded-full border border-border object-cover"
-                                                loading="lazy"
-                                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                                transition={{ duration: 0.2 }}
-                                            />
-                                            <div>
-                                                <motion.div
-                                                    className="text-sm font-semibold"
-                                                    initial={{ opacity: 0 }}
-                                                    whileInView={{ opacity: 1 }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ duration: 0.5, delay: i * 0.1 + 0.3 }}
-                                                >
-                                                    {t.name}
-                                                </motion.div>
-                                                <motion.div
-                                                    className="text-xs text-foreground/70"
-                                                    initial={{ opacity: 0 }}
-                                                    whileInView={{ opacity: 1 }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ duration: 0.5, delay: i * 0.1 + 0.4 }}
-                                                >
-                                                    {t.role}
-                                                </motion.div>
-                                            </div>
-                                        </motion.div>
-                                        <motion.p
-                                            className="mt-2 text-sm text-foreground/80"
-                                            initial={{ opacity: 0, y: 10 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.5, delay: i * 0.1 + 0.5 }}
-                                        >
-                                            "{t.quote}"
-                                        </motion.p>
-                                    </motion.article>
+                            {chunk(testimonials, TESTIMONIALS_PER_SLIDE).map((group, groupIndex) => (
+                                <CarouselItem key={group[0].name} className="basis-full">
+                                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                        {group.map((t, i) => (
+                                            <TestimonialCard key={t.name} t={t} i={groupIndex * TESTIMONIALS_PER_SLIDE + i} />
+                                        ))}
+                                    </div>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
