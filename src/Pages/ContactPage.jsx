@@ -9,7 +9,9 @@ export function ContactPage() {
                 description="Get in touch with Onex Service in Jalgaon, Maharashtra — call, email, or message us on WhatsApp to grow your business online."
                 keywords="contact Onex Service, social media agency Jalgaon contact, digital marketing agency Jalgaon phone number"
             />
-            <Contact />
+            <div className="pt-24 sm:pt-28 md:pt-36">
+                <Contact />
+            </div>
         </>
     )
 }

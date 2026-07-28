@@ -209,8 +209,8 @@ export function Footer() {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         <h3 className="font-heading text-lg font-bold mb-4">Contact</h3>
-                        <ul className="space-y-4 text-left lg:text-center">
-                            <li className="flex items-start gap-2 lg:flex-col lg:items-center">
+                        <ul className="space-y-4">
+                            <li className="flex flex-col items-center gap-2 text-center">
                                 <MapPin className="h-4 w-4 flex-shrink-0 text-primary mt-0.5 lg:mt-0" />
                                 <a
                                     href="https://www.google.com/maps/search/?api=1&query=Ring+Road,+above+Hotel+Gulmohar,+near+JDCC+Bank,+Ganesh+Colony,+Jalgaon,+Maharashtra+425001"
@@ -221,7 +221,7 @@ export function Footer() {
                                     Infront of Mahadev Temple, Bhushan Colony Ramanand Nagar, Jalgaon, Maharashtra, India 425001.
                                 </a>
                             </li>
-                            <li className="flex items-start gap-2 lg:flex-col lg:items-center">
+                            <li className="flex flex-col items-center gap-2 text-center">
                                 <Mail className="h-4 w-4 flex-shrink-0 text-primary mt-0.5 lg:mt-0" />
                                 <a
                                     href="mailto:onexdigiserv@gmail.com"
@@ -230,7 +230,7 @@ export function Footer() {
                                     onexdigiserv@gmail.com
                                 </a>
                             </li>
-                            <li className="flex items-start gap-2 lg:flex-col lg:items-center">
+                            <li className="flex flex-col items-center gap-2 text-center">
                                 <Phone className="h-4 w-4 flex-shrink-0 text-primary mt-0.5 lg:mt-0" />
                                 <span className="text-sm text-foreground/80">
                                     +91 7875359828 | +91 7822860876

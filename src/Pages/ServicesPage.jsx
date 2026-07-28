@@ -10,7 +10,9 @@ export function ServicesPage() {
                 description="Social media marketing, content creation, Meta ads, and web development services for growing businesses in Jalgaon and across India."
                 keywords="social media marketing services Jalgaon, Meta ads services, content creation services, website development Jalgaon, digital marketing services"
             />
-            <Services />
+            <div className="pt-24 sm:pt-28 md:pt-36">
+                <Services />
+            </div>
             <WebsiteDevelopment />
         </>
     )

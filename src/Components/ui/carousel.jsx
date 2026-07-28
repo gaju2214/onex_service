@@ -20,7 +20,7 @@ export function Carousel({ children, opts }) {
         <div className="relative">
             <div className="overflow-hidden px-8 sm:px-10">
                 <div
-                    className="flex gap-4 transition-transform duration-300 ease-in-out"
+                    className="flex transition-transform duration-300 ease-in-out"
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                     {items.map((item, index) => (

@@ -44,7 +44,7 @@ export function ClientLogos() {
             aria-label="Our Clients"
         >
             <motion.h2
-                className="font-heading text-xl font-bold text-center sm:text-2xl md:text-3xl"
+                className="px-4 font-heading text-xl font-bold text-center sm:text-2xl md:text-3xl"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
