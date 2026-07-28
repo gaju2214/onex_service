@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
+import { MapPin, Mail, Phone } from "lucide-react"
 
 export function Footer() {
     return (
@@ -23,7 +24,7 @@ export function Footer() {
             </div>
 
             <div className="mx-auto max-w-6xl px-4 lg:px-0 py-10 relative z-10 text-center md:text-left">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:mx-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:mx-8">
                     {/* Logo and Social Media */}
                     <motion.div
                         className="flex flex-col gap-4 items-center md:items-start lg:items-center lg:text-center"
@@ -33,9 +34,10 @@ export function Footer() {
                         transition={{ duration: 0.6 }}
                     >
                         <div className="flex items-center gap-2">
-                            <motion.div
-                                className="h-6 w-6 rounded-md bg-gradient-to-br from-[#E8C077] to-[var(--brand-gold)]"
-                                aria-hidden="true"
+                            <motion.img
+                                src="/logo2.png"
+                                alt="Onex Service Logo"
+                                className="h-8 w-8 rounded-full object-contain"
                                 whileHover={{ rotate: 360, scale: 1.1 }}
                                 transition={{ duration: 0.5 }}
                             />
@@ -195,6 +197,45 @@ export function Footer() {
                                     )}
                                 </li>
                             ))}
+                        </ul>
+                    </motion.div>
+
+                    {/* Contact */}
+                    <motion.div
+                        className="lg:text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                        <h3 className="font-heading text-lg font-bold mb-4">Contact</h3>
+                        <ul className="space-y-4 text-left lg:text-center">
+                            <li className="flex items-start gap-2 lg:flex-col lg:items-center">
+                                <MapPin className="h-4 w-4 flex-shrink-0 text-primary mt-0.5 lg:mt-0" />
+                                <a
+                                    href="https://www.google.com/maps/search/?api=1&query=Ring+Road,+above+Hotel+Gulmohar,+near+JDCC+Bank,+Ganesh+Colony,+Jalgaon,+Maharashtra+425001"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm text-foreground/80 transition-colors hover:text-primary"
+                                >
+                                    Infront of Mahadev Temple, Bhushan Colony Ramanand Nagar, Jalgaon, Maharashtra, India 425001.
+                                </a>
+                            </li>
+                            <li className="flex items-start gap-2 lg:flex-col lg:items-center">
+                                <Mail className="h-4 w-4 flex-shrink-0 text-primary mt-0.5 lg:mt-0" />
+                                <a
+                                    href="mailto:onexdigiserv@gmail.com"
+                                    className="text-sm text-foreground/80 transition-colors hover:text-primary"
+                                >
+                                    onexdigiserv@gmail.com
+                                </a>
+                            </li>
+                            <li className="flex items-start gap-2 lg:flex-col lg:items-center">
+                                <Phone className="h-4 w-4 flex-shrink-0 text-primary mt-0.5 lg:mt-0" />
+                                <span className="text-sm text-foreground/80">
+                                    +91 7875359828 | +91 7822860876
+                                </span>
+                            </li>
                         </ul>
                     </motion.div>
                 </div>
