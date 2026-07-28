@@ -1,36 +1,36 @@
 import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 
+// Placeholder data — replace with real Indian client names, roles, quotes,
+// and (optionally) real video URLs once supplied. Entries without a
+// videoUrl render as text-only review cards.
 const testimonials = [
     {
-        name: "Ava Martinez",
-        role: "CMO, NovaTech",
-        quote: "ContentOcean transformed our brand presence and boosted our engagement by 3x within months.",
+        name: "Maharaj Wholesale",
+        role: "Owner, Maharaj Wholesale",
+        quote: "Our Instagram went from a few hundred to thousands of followers. Enquiries have doubled since we started working with them.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
     },
     {
-        name: "Liam Johnson",
-        role: "Founder, UrbanGrain",
-        quote: "From strategy to content, their team delivered premium work that truly moved the needle.",
+        name: "Peehus Rasoi",
+        role: "Owner, Peehus Rasoi",
+        quote: "They understood our local audience and made reels that actually felt like us, not a generic agency template.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
     },
     {
-        name: "Sophia Chen",
-        role: "Head of Growth, Alto",
-        quote: "Clean execution, bold ideas, and measurable results. Couldn’t ask for more.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
+        name: "The Kidszone, Jalgaon",
+        role: "Director, The Kidszone",
+        quote: "We used to rely only on word of mouth. Now our enquiries come from Instagram every single day.",
     },
     {
-        name: "Ethan Davis",
-        role: "CEO, TechStart",
-        quote: "Exceptional service and innovative solutions that exceeded our expectations.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
+        name: "The Baithak Bar & Restro",
+        role: "Owner, The Baithak Bar & Restro, Jalgaon",
+        quote: "Professional, honest, and they explain everything in simple terms. No confusing jargon, just results.",
     },
     {
-        name: "Olivia Wilson",
-        role: "Marketing Director, InnovateCorp",
-        quote: "Their expertise in digital marketing helped us achieve unprecedented growth.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
+        name: "Hotel Shree Gajanan",
+        role: "Proprietor, Hotel Shree Gajanan",
+        quote: "Best decision for our hotel's social media. Clear reporting every month and steady growth.",
     },
 ]
 
@@ -171,23 +171,25 @@ export function Testimonials() {
                                         >
                                             "{t.quote}"
                                         </motion.p>
-                                        <motion.div
-                                            className="mt-3 flex justify-center"
-                                            initial={{ opacity: 0, scale: 0.8 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.5, delay: i * 0.1 + 0.6 }}
-                                        >
-                                            <motion.iframe
-                                                src={t.videoUrl}
-                                                title={`${t.name} testimonial video`}
-                                                className="w-full aspect-[9/16] max-h-48 rounded-lg border border-border"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowFullScreen
-                                                whileHover={{ scale: 1.02 }}
-                                                transition={{ duration: 0.3 }}
-                                            />
-                                        </motion.div>
+                                        {t.videoUrl && (
+                                            <motion.div
+                                                className="mt-3 flex justify-center"
+                                                initial={{ opacity: 0, scale: 0.8 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 0.5, delay: i * 0.1 + 0.6 }}
+                                            >
+                                                <motion.iframe
+                                                    src={t.videoUrl}
+                                                    title={`${t.name} testimonial video`}
+                                                    className="w-full aspect-[9/16] max-h-48 rounded-lg border border-border"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                    whileHover={{ scale: 1.02 }}
+                                                    transition={{ duration: 0.3 }}
+                                                />
+                                            </motion.div>
+                                        )}
                                     </motion.article>
                                 </CarouselItem>
                             ))}

@@ -27,7 +27,7 @@ function App() {
         <Services />
         <ReelsShowcase />
         <GrowthDashboard />
-        {/* <Testimonials /> */}
+        <Testimonials />
         {/* <Portfolio /> */}
         <WebsiteDevelopment />
         <Contact />
