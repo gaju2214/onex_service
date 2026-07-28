@@ -2,24 +2,15 @@ import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 
-// Placeholder data — replace permalink/clientName/resultCaption with real
-// Instagram reel URLs and results once supplied.
+// Real reel links, sourced from public/reel.txt. Per-reel client/result
+// mapping wasn't supplied, so captions stay generic until that's available.
 const reels = [
-    {
-        permalink: "https://www.instagram.com/reel/CxampleReel1/",
-        clientName: "Maharaj Wholesale",
-        resultCaption: "300K views, 40K new followers in 1 week",
-    },
-    {
-        permalink: "https://www.instagram.com/reel/CxampleReel2/",
-        clientName: "Peehus Rasoi",
-        resultCaption: "180K views during festival campaign",
-    },
-    {
-        permalink: "https://www.instagram.com/reel/CxampleReel3/",
-        clientName: "The Kidszone",
-        resultCaption: "2,500 new enquiries in one month",
-    },
+    { permalink: "https://www.instagram.com/reel/DbD3m5QI8-U/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DaSwzylt-Uy/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DbRwwC4obuS/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DZ42gSeML2P/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DaNrhQkIWDi/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DbHaGSOSCfP/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
 ]
 
 function loadInstagramEmbedScript() {
