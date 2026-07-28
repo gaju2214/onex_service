@@ -9,7 +9,7 @@ export function Carousel({ children, opts }) {
     const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)
 
     useEffect(() => {
-        if (opts?.align === 'start') {
+        if (opts?.autoPlay) {
             // Simple auto-advance every 5 seconds
             const interval = setInterval(nextSlide, 5000)
             return () => clearInterval(interval)

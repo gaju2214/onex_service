@@ -82,7 +82,7 @@ export function Testimonials() {
                 </motion.h2>
 
                 <div className="mt-8">
-                    <Carousel opts={{ align: "start" }}>
+                    <Carousel opts={{ align: "start", autoPlay: true }}>
                         <CarouselContent>
                             {testimonials.map((t, i) => (
                                 <CarouselItem key={i} className="basis-full sm:basis-1/2 lg:basis-[calc(33.333%-1rem)]">

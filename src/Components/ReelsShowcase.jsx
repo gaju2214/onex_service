@@ -88,7 +88,7 @@ export function ReelsShowcase() {
                 </motion.h2>
 
                 <div className="mt-8">
-                    <Carousel opts={{ align: "start" }}>
+                    <Carousel opts={{ align: "start", autoPlay: false }}>
                         <CarouselContent>
                             {chunk(reels, REELS_PER_SLIDE).map((group, groupIndex) => (
                                 <CarouselItem key={group[0].permalink} className="basis-full">
