@@ -35,7 +35,7 @@ export function Footer() {
                     >
                         <div className="flex items-center gap-2">
                             <motion.img
-                                src="/logo2.png"
+                                src="/logo3.png"
                                 alt="Onex Service Logo"
                                 className="h-8 w-8 object-contain"
                                 whileHover={{ rotate: 360, scale: 1.1 }}
