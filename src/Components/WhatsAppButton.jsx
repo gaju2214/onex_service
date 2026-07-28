@@ -13,7 +13,7 @@ export function WhatsAppButton() {
             rel="noopener noreferrer"
             aria-label="Chat with us on WhatsApp"
             className="fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
-            style={{ backgroundColor: "#25D366" }}
+            style={{ background: "linear-gradient(135deg, #E8C077, #B8860B)" }}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 1 }}

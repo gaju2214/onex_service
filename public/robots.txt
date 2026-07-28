@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://onexservice.in/sitemap.xml
+Sitemap: https://onexservice.in/sitemapnew.xml
