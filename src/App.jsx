@@ -9,11 +9,13 @@ import { Services } from "./Components/services"
 import { Testimonials } from "./Components/testimonials"
 import { ThemeProvider } from "./Components/theme-provider"
 import { WebsiteDevelopment } from "./Components/website-development"
+import { WhatsAppButton } from "./Components/WhatsAppButton"
 
 function App() {
   return (
     <ThemeProvider>
       <FloatingStickers />
+      <WhatsAppButton />
       <div className="flex min-h-screen flex-col">
         <Navbar />
         <Hero />

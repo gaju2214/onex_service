@@ -38,6 +38,8 @@
   /* Brand helpers */
   --brand-blue: #007aff;
   --brand-purple: #8b5cf6;
+  --brand-saffron: #FF9933;
+  --brand-green: #138808;
 
   /* Larger rounding for premium look (Tailwind 2xl ~ 1rem) */
   --radius: 1rem;
@@ -75,6 +77,8 @@
 
   --accent: #8b5cf6;
   --accent-foreground: #0a0a0a;
+  --brand-saffron: #FF9933;
+  --brand-green: #138808;
 
   --destructive: #ef4444;
   --destructive-foreground: #0a0a0a;
