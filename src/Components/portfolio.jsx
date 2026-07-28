@@ -1,14 +1,23 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
+import { ReelsGrid } from "./ReelsShowcase"
 
 const projects = [
-    { id: 0, title: "Original Content Creation Campaign", category: "Content Creation" },
-    { id: 1, title: "Multi-Platform Marketing Strategy", category: "Marketing" },
-    { id: 2, title: "E-commerce Web Application", category: "Web Development" },
-    { id: 3, title: "Social Media Engagement Boost", category: "Social Media" },
-    { id: 4, title: "Customer Survey Analysis", category: "Research" },
-    { id: 5, title: "Digital Transformation Consultancy", category: "Consultancy" },
-    { id: 6, title: "Meta Ads Performance Campaign", category: "Advertising" },
+    { id: 0, title: "Original Content Creation Campaign", category: "Content Creation", image: "/portfolio/content-creation.jpg" },
+    { id: 1, title: "Multi-Platform Marketing Strategy", category: "Marketing", image: "/portfolio/marketing-strategy.jpg" },
+    { id: 2, title: "E-commerce Web Application", category: "Web Development", image: "/portfolio/ecommerce.jpg" },
+    { id: 3, title: "Social Media Engagement Boost", category: "Social Media", image: "/portfolio/social-media.jpg" },
+    { id: 4, title: "Customer Survey Analysis", category: "Research", image: "/portfolio/research.jpg" },
+    { id: 5, title: "Digital Transformation Consultancy", category: "Consultancy", image: "/portfolio/consultancy.jpg" },
+    { id: 6, title: "Meta Ads Performance Campaign", category: "Advertising", image: "/portfolio/advertising.jpg" },
+]
+
+// Real websites built by the team.
+const websites = [
+    { name: "Electrosoft System", url: "https://electrosoftsystem.in/" },
+    { name: "Get Your Project Done", url: "https://www.getyourprojectdone.in/" },
+    { name: "Get Your Project Done — IoT", url: "https://iot.getyourprojectdone.in/" },
+    { name: "Ecruxbot", url: "https://ecruxbot.in/" },
 ]
 
 export function Portfolio() {
@@ -28,18 +37,6 @@ export function Portfolio() {
                 >
                     Our Works & Edits
                 </motion.h2>
-
-                {/* Optional filters (static UI) */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                    {["All", "Branding", "Campaigns", "Websites"].map((f) => (
-                        <button
-                            key={f}
-                            className="rounded-full border border-border bg-foreground/5 px-3 py-1 text-xs text-foreground/80 hover:bg-foreground/10"
-                        >
-                            {f}
-                        </button>
-                    ))}
-                </div>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {displayedProjects.map((p, i) => (
@@ -79,7 +76,12 @@ export function Portfolio() {
                                     </linearGradient>
                                 </defs>
                             </motion.svg>
-                            <div className="h-48 w-full bg-gradient-to-br from-[var(--brand-gold)]/20 to-[var(--brand-graphite)]/20 sm:h-56" />
+                            <img
+                                src={p.image}
+                                alt={`${p.title} — ${p.category}`}
+                                loading="lazy"
+                                className="h-48 w-full object-cover sm:h-56"
+                            />
                             <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-4">
                                 <div>
                                     <div className="text-sm font-semibold">{p.title}</div>
@@ -100,6 +102,54 @@ export function Portfolio() {
                         </button>
                     </div>
                 )}
+
+                <motion.h3
+                    className="mt-16 font-heading text-2xl font-bold text-center md:text-3xl"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Reels That Went <span className="text-[var(--brand-gold)]">Viral</span>
+                </motion.h3>
+
+                <div className="mt-8">
+                    <ReelsGrid />
+                </div>
+
+                <motion.h3
+                    className="mt-16 font-heading text-2xl font-bold text-center md:text-3xl"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Websites We've <span className="text-[var(--brand-gold)]">Built</span>
+                </motion.h3>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {websites.map((site, i) => (
+                        <motion.a
+                            key={site.url}
+                            href={site.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex flex-col justify-between rounded-2xl border border-border bg-foreground/5 p-5 backdrop-blur transition-transform hover:-translate-y-1"
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.45, delay: i * 0.05 }}
+                        >
+                            <div>
+                                <div className="text-base font-semibold">{site.name}</div>
+                                <div className="mt-1 text-xs text-foreground/60">{site.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</div>
+                            </div>
+                            <div className="mt-4 text-sm font-semibold text-[var(--brand-gold)] group-hover:underline">
+                                Visit Website →
+                            </div>
+                        </motion.a>
+                    ))}
+                </div>
             </div>
         </section>
     )

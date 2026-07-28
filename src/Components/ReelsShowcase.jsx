@@ -48,7 +48,10 @@ function ReelCard({ reel, i }) {
     )
 }
 
-export function ReelsShowcase() {
+// Reusable reels carousel, without its own section/heading — used both on
+// the homepage (wrapped by ReelsShowcase below) and embedded directly into
+// the Portfolio page's "Our Works & Edits" section.
+export function ReelsGrid() {
     useEffect(() => {
         loadInstagramEmbedScript()
         // Instagram's script can run before the carousel finishes laying
@@ -60,6 +63,26 @@ export function ReelsShowcase() {
         return () => clearTimeout(timeout)
     }, [])
 
+    return (
+        <Carousel opts={{ align: "start", autoPlay: false }}>
+            <CarouselContent>
+                {chunk(reels, REELS_PER_SLIDE).map((group, groupIndex) => (
+                    <CarouselItem key={group[0].permalink} className="basis-full">
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            {group.map((reel, i) => (
+                                <ReelCard key={reel.permalink} reel={reel} i={groupIndex * REELS_PER_SLIDE + i} />
+                            ))}
+                        </div>
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+        </Carousel>
+    )
+}
+
+export function ReelsShowcase() {
     return (
         <section id="reels" className="scroll-mt-24 border-t border-border py-16 md:py-24" aria-label="Viral Reels">
             <div className="mx-auto max-w-6xl px-4">
@@ -74,21 +97,7 @@ export function ReelsShowcase() {
                 </motion.h2>
 
                 <div className="mt-8">
-                    <Carousel opts={{ align: "start", autoPlay: false }}>
-                        <CarouselContent>
-                            {chunk(reels, REELS_PER_SLIDE).map((group, groupIndex) => (
-                                <CarouselItem key={group[0].permalink} className="basis-full">
-                                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                        {group.map((reel, i) => (
-                                            <ReelCard key={reel.permalink} reel={reel} i={groupIndex * REELS_PER_SLIDE + i} />
-                                        ))}
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="left-2" />
-                        <CarouselNext className="right-2" />
-                    </Carousel>
+                    <ReelsGrid />
                 </div>
             </div>
         </section>
