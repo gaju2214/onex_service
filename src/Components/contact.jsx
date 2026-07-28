@@ -46,7 +46,7 @@ export function Contact() {
 
                 <div className="mt-6 flex justify-center sm:mt-8">
                     <a
-                        href="https://wa.me/7875359828"
+                        href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-[#1a1a1a] ring-1 ring-primary/20 transition hover:animate-pulse bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)] sm:px-8 sm:py-4 sm:text-lg"

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 
-// Placeholder number — replace with real business WhatsApp number (country code, no +/spaces).
-const WHATSAPP_NUMBER = "911234567890"
+const WHATSAPP_NUMBER = "917875359828"
 const WHATSAPP_MESSAGE = "Hi! I'm interested in your social media marketing services."
 
 export function WhatsAppButton() {
