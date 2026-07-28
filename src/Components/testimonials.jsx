@@ -1,36 +1,75 @@
 import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 
-// Placeholder data — replace with real Indian client names, roles, quotes,
-// and (optionally) real video URLs once supplied. Entries without a
-// videoUrl render as text-only review cards.
+// Real client names/logos, sourced from public/clients_logo/clients_details.
+// Quote text is still placeholder pending real written reviews from these
+// clients — swap `quote` per entry once that's supplied.
 const testimonials = [
     {
         name: "Maharaj Wholesale",
         role: "Owner, Maharaj Wholesale",
+        logo: "/clients_logo/Maharaj Wholesale.png",
         quote: "Our Instagram went from a few hundred to thousands of followers. Enquiries have doubled since we started working with them.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
     },
     {
         name: "Peehus Rasoi",
         role: "Owner, Peehus Rasoi",
+        logo: "/clients_logo/Peehus Rasoi.png",
         quote: "They understood our local audience and made reels that actually felt like us, not a generic agency template.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
     },
     {
-        name: "The Kidszone, Jalgaon",
-        role: "Director, The Kidszone",
+        name: "The Kidszone",
+        role: "Director, The Kidszone, Jalgaon",
+        logo: "/clients_logo/The Kidszone.jpeg",
         quote: "We used to rely only on word of mouth. Now our enquiries come from Instagram every single day.",
     },
     {
         name: "The Baithak Bar & Restro",
         role: "Owner, The Baithak Bar & Restro, Jalgaon",
+        logo: "/clients_logo/The Baithak Bar & Restro.png",
         quote: "Professional, honest, and they explain everything in simple terms. No confusing jargon, just results.",
     },
     {
         name: "Hotel Shree Gajanan",
         role: "Proprietor, Hotel Shree Gajanan",
+        logo: "/clients_logo/Hotel Shree Gajanan.jpeg",
         quote: "Best decision for our hotel's social media. Clear reporting every month and steady growth.",
+    },
+    {
+        name: "Navid Sofa",
+        role: "Owner, Navid Sofa",
+        logo: "/clients_logo/Navid Sofa.png",
+        quote: "Our showroom gets steady enquiries from Instagram now, something that never happened before.",
+    },
+    {
+        name: "Aanand Saw Mill",
+        role: "Owner, Aanand Saw Mill",
+        logo: "/clients_logo/Aanand Saw Mill.jpeg",
+        quote: "They made our woodwork business look premium online. Great content, great communication.",
+    },
+    {
+        name: "ShopGrow",
+        role: "Founder, ShopGrow",
+        logo: "/clients_logo/ShopGrow.jpeg",
+        quote: "Consistent posting and clear monthly updates. Exactly what we needed to grow online.",
+    },
+    {
+        name: "Kaviesh Creations",
+        role: "Owner, Kaviesh Creations, Pune",
+        logo: "/clients_logo/Kaviesh Creations, Pune.png",
+        quote: "Our page finally looks and feels professional. Enquiries have picked up noticeably.",
+    },
+    {
+        name: "Rita Bhalla Kitchen",
+        role: "Owner, Rita Bhalla Kitchen",
+        logo: "/clients_logo/Rita Bhalla Kitchen .WEBP",
+        quote: "They understand food content — our reels actually get watched and shared now.",
+    },
+    {
+        name: "Louis Creation",
+        role: "Owner, Louis Creation",
+        logo: "/clients_logo/Louis Creation.JPEG",
+        quote: "Reliable team, good creative ideas, and they actually explain the results to us.",
     },
 ]
 
@@ -134,8 +173,8 @@ export function Testimonials() {
                                             transition={{ duration: 0.5, delay: i * 0.1 + 0.2 }}
                                         >
                                             <motion.img
-                                                src="/client-portrait.jpg"
-                                                alt={`${t.name} portrait`}
+                                                src={t.logo}
+                                                alt={`${t.name} logo`}
                                                 className="h-8 w-8 rounded-full border border-border object-cover"
                                                 loading="lazy"
                                                 whileHover={{ scale: 1.1, rotate: 5 }}
@@ -171,25 +210,6 @@ export function Testimonials() {
                                         >
                                             "{t.quote}"
                                         </motion.p>
-                                        {t.videoUrl && (
-                                            <motion.div
-                                                className="mt-3 flex justify-center"
-                                                initial={{ opacity: 0, scale: 0.8 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                viewport={{ once: true }}
-                                                transition={{ duration: 0.5, delay: i * 0.1 + 0.6 }}
-                                            >
-                                                <motion.iframe
-                                                    src={t.videoUrl}
-                                                    title={`${t.name} testimonial video`}
-                                                    className="w-full aspect-[9/16] max-h-48 rounded-lg border border-border"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowFullScreen
-                                                    whileHover={{ scale: 1.02 }}
-                                                    transition={{ duration: 0.3 }}
-                                                />
-                                            </motion.div>
-                                        )}
                                     </motion.article>
                                 </CarouselItem>
                             ))}
