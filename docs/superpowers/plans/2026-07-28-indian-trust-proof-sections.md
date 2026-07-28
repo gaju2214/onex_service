@@ -126,7 +126,7 @@ git commit -m "feat: add Indian accent colors and WhatsApp floating CTA"
 
 **Interfaces:**
 - Consumes: none (self-contained placeholder data).
-- Produces: `export function ClientLogos()`, a section with `id="client-logos"`, no props. Placeholder logo images reference `/clients/placeholder-N.svg` paths (files do not need to exist yet — `img` `onError` falls back to a text badge so the section still renders cleanly before real logos are supplied).
+- Produces: `export function ClientLogos()`, a section with `id="client-logos"`, no props. Uses real client logo files already present at `public/clients_logo/` (see `public/clients_logo/clients_details` for the source list of names and Instagram handles).
 
 - [ ] **Step 1: Create the component with placeholder data and a duplicated-list marquee**
 
@@ -137,30 +137,36 @@ import { motion } from "framer-motion"
 
 // Placeholder data — replace with real client names, cities, and logo file
 // paths under /public/clients/ once assets are supplied.
+// Real client data, sourced from public/clients_logo/clients_details.
+// Logo files live under /public/clients_logo/ and are served at /clients_logo/<filename>.
 const clients = [
-    { name: "Shree Textiles", city: "Surat", logo: "/clients/placeholder-1.svg" },
-    { name: "Patel Electronics", city: "Rajkot", logo: "/clients/placeholder-2.svg" },
-    { name: "Annapurna Sweets", city: "Indore", logo: "/clients/placeholder-3.svg" },
-    { name: "Sunrise Coaching Classes", city: "Nashik", logo: "/clients/placeholder-4.svg" },
-    { name: "Ganesh Motors", city: "Nagpur", logo: "/clients/placeholder-5.svg" },
-    { name: "Laxmi Jewellers", city: "Jaipur", logo: "/clients/placeholder-6.svg" },
+    { name: "Maharaj Wholesale", instagram: "@maharaj.wholesale_official", logo: "/clients_logo/Maharaj Wholesale.png" },
+    { name: "Peehus Rasoi", instagram: "@peehus.rasoi_333", logo: "/clients_logo/Peehus Rasoi.png" },
+    { name: "The Kidszone", instagram: "@thekidszone_jalgaon", logo: "/clients_logo/The Kidszone.jpeg" },
+    { name: "The Baithak Bar & Restro", instagram: "@thebaithak.jalgaon", logo: "/clients_logo/The Baithak Bar & Restro.png" },
+    { name: "Hotel Shree Gajanan", instagram: "@hotel.shreegajanan", logo: "/clients_logo/Hotel Shree Gajanan.jpeg" },
+    { name: "Navid Sofa", instagram: "@navidsofa", logo: "/clients_logo/Navid Sofa.png" },
+    { name: "Aanand Saw Mill", instagram: "@asmwoodwork", logo: "/clients_logo/Aanand Saw Mill.jpeg" },
+    { name: "ShopGrow", instagram: "@shopgrow.in", logo: "/clients_logo/ShopGrow.jpeg" },
+    { name: "Kaviesh Creations, Pune", instagram: "@kaviesh_creations", logo: "/clients_logo/Kaviesh Creations, Pune.png" },
+    { name: "Rita Bhalla Kitchen", instagram: "@ritabhalla.kitchen", logo: "/clients_logo/Rita Bhalla Kitchen .WEBP" },
+    { name: "Louis Creation", instagram: "@louis_creation", logo: "/clients_logo/Louis Creation.JPEG" },
 ]
 
 function LogoCard({ client }) {
     return (
-        <div className="mx-4 flex h-20 w-40 flex-shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border border-border bg-foreground/5 px-4 backdrop-blur">
+        <div className="mx-4 flex h-24 w-44 flex-shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border border-border bg-foreground/5 px-4 backdrop-blur">
             <img
                 src={client.logo}
                 alt={`${client.name} logo`}
-                className="h-8 w-auto object-contain"
+                className="h-12 w-12 rounded-full border border-border object-cover"
                 loading="lazy"
                 onError={(e) => {
                     e.currentTarget.style.display = "none"
-                    e.currentTarget.nextElementSibling.style.display = "block"
                 }}
             />
-            <span className="hidden text-sm font-semibold">{client.name}</span>
-            <span className="text-xs text-foreground/60">{client.city}</span>
+            <span className="text-center text-xs font-semibold leading-tight">{client.name}</span>
+            <span className="text-xs text-foreground/60">{client.instagram}</span>
         </div>
     )
 }
@@ -220,7 +226,7 @@ Place `<ClientLogos />` right after `<Hero />`:
 
 Run: `npm run dev`
 
-Expected: Section appears after Hero with a heading and a continuously scrolling row of 6 placeholder logo cards (showing client name text since the placeholder image paths 404 and `onError` reveals the text fallback). No console errors besides the expected 404s for placeholder images.
+Expected: Section appears after Hero with a heading and a continuously scrolling row of 11 real client logo cards (Maharaj Wholesale, Peehus Rasoi, The Kidszone, etc.), each showing the actual logo image, client name, and Instagram handle. No console errors.
 
 - [ ] **Step 4: Commit**
 
