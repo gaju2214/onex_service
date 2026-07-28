@@ -40,9 +40,8 @@ export function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={[
-                // Always dark, independent of the site's light/dark theme toggle.
-                "fixed inset-x-0 top-0 z-50 bg-[#1a1b1e]/95 text-[#f2ede4] backdrop-blur supports-[backdrop-filter]:backdrop-blur transition-all duration-300",
-                solid ? "border-b border-[#33353a] shadow-lg" : "",
+                "fixed inset-x-0 top-0 z-50 bg-background/95 text-foreground backdrop-blur supports-[backdrop-filter]:backdrop-blur transition-all duration-300",
+                solid ? "border-b border-border shadow-lg" : "",
             ].join(" ")}
             role="banner"
         >
@@ -79,7 +78,7 @@ export function Navbar() {
                                 className={({ isActive }) =>
                                     [
                                         "text-sm transition-colors relative",
-                                        isActive ? "text-[#d9a756] font-semibold" : "text-[#f2ede4]/80 hover:text-[#f2ede4]",
+                                        isActive ? "text-primary font-semibold" : "text-foreground/80 hover:text-foreground",
                                     ].join(" ")
                                 }
                             >
@@ -92,7 +91,7 @@ export function Navbar() {
                 <div className="hidden md:flex items-center gap-4">
                     <motion.button
                         onClick={toggleTheme}
-                        className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        className="p-2 rounded-lg hover:bg-accent transition-colors"
                         aria-label="Toggle theme"
                         whileHover={{ scale: 1.1, rotate: 180 }}
                         whileTap={{ scale: 0.9 }}
@@ -123,7 +122,7 @@ export function Navbar() {
                     >
                         <Link
                             to="/contact"
-                            className="rounded-xl px-4 py-2 text-sm font-semibold text-[#1a1a1a] shadow-lg ring-1 ring-[#B8860B]/20 bg-gradient-to-r from-[#E8C077] to-[#B8860B]"
+                            className="rounded-xl px-4 py-2 text-sm font-semibold text-[#1a1a1a] shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                         >
                             {"Let's Talk"}
                         </Link>
@@ -162,7 +161,7 @@ export function Navbar() {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.8, y: -20 }}
                             transition={{ duration: 0.3 }}
-                            className="absolute top-full right-4 left-4 mt-2 space-y-2 rounded-xl border border-[#33353a] bg-[#1a1b1e]/95 p-3 text-[#f2ede4] shadow-lg sm:left-auto sm:w-64 md:hidden"
+                            className="absolute top-full right-4 left-4 mt-2 space-y-2 rounded-xl border border-border bg-background/95 p-3 text-foreground shadow-lg sm:left-auto sm:w-64 md:hidden"
                         >
                             {navItems.map((item, index) => (
                                 <motion.li
@@ -177,8 +176,8 @@ export function Navbar() {
                                         onClick={() => setMenuOpen(false)}
                                         className={({ isActive }) =>
                                             [
-                                                "block rounded-md px-3 py-2 text-sm hover:bg-white/5",
-                                                isActive ? "text-[#d9a756] font-semibold" : "text-[#f2ede4]/80 hover:text-[#f2ede4]",
+                                                "block rounded-md px-3 py-2 text-sm hover:bg-foreground/5",
+                                                isActive ? "text-primary font-semibold" : "text-foreground/80 hover:text-foreground",
                                             ].join(" ")
                                         }
                                     >
@@ -196,7 +195,7 @@ export function Navbar() {
                                         toggleTheme();
                                         setMenuOpen(false);
                                     }}
-                                    className="flex items-center justify-center w-full rounded-md px-3 py-2 text-sm text-[#f2ede4]/80 hover:bg-white/5 hover:text-[#f2ede4]"
+                                    className="flex items-center justify-center w-full rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-foreground/5 hover:text-foreground"
                                     whileHover={{ scale: 1.05, x: 5 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
@@ -215,7 +214,7 @@ export function Navbar() {
                             >
                                 <Link
                                     to="/contact"
-                                    className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-[#1a1a1a] shadow-lg ring-1 ring-[#B8860B]/20 bg-gradient-to-r from-[#E8C077] to-[#B8860B]"
+                                    className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-[#1a1a1a] shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                                     onClick={() => setMenuOpen(false)}
                                 >
                                     {"Let's Talk"}
