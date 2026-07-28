@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 export function Footer() {
     return (
@@ -91,7 +92,7 @@ export function Footer() {
                                         whileHover={{
                                             scale: 1.2,
                                             rotate: 5,
-                                            backgroundColor: "rgba(0,122,255,0.1)"
+                                            backgroundColor: "rgba(255,107,0,0.1)"
                                         }}
                                         whileTap={{ scale: 0.9 }}
                                     >
@@ -124,23 +125,26 @@ export function Footer() {
                         <h3 className="font-heading text-lg font-bold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
                             {[
-                                { href: "#home", label: "Home" },
-                                { href: "#about", label: "About" },
-                                { href: "#services", label: "Services" },
-                                { href: "#portfolio", label: "Projects" },
-                                { href: "#contact", label: "Contact" },
+                                { to: "/", label: "Home" },
+                                { to: "/about", label: "About" },
+                                { to: "/services", label: "Services" },
+                                { to: "/portfolio", label: "Projects" },
+                                { to: "/contact", label: "Contact" },
                             ].map((link, index) => (
                                 <li key={link.label}>
-                                    <motion.a
-                                        href={link.href}
-                                        className="text-sm text-foreground/80 hover:text-blue-600 transition-colors"
+                                    <motion.div
                                         initial={{ opacity: 0, x: -10 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: index * 0.05 }}
                                     >
-                                        {link.label}
-                                    </motion.a>
+                                        <Link
+                                            to={link.to}
+                                            className="text-sm text-foreground/80 hover:text-primary transition-colors"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </motion.div>
                                 </li>
                             ))}
                         </ul>
@@ -165,16 +169,19 @@ export function Footer() {
                                 "Social Media Marketing",
                             ].map((service, index) => (
                                 <li key={typeof service === 'string' ? service : service.name} className="space-y-1">
-                                    <motion.a
-                                        href="#services"
-                                        className="text-sm text-foreground/80 hover:text-blue-600 transition-colors"
+                                    <motion.div
                                         initial={{ opacity: 0, x: -10 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: index * 0.05 }}
                                     >
-                                        {typeof service === 'string' ? service : service.name}
-                                    </motion.a>
+                                        <Link
+                                            to="/services"
+                                            className="text-sm text-foreground/80 hover:text-primary transition-colors"
+                                        >
+                                            {typeof service === 'string' ? service : service.name}
+                                        </Link>
+                                    </motion.div>
                                     {typeof service === 'object' && (
                                         <motion.p
                                             className="text-xs text-foreground/60"

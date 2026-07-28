@@ -79,16 +79,9 @@ export function Portfolio() {
                                     </linearGradient>
                                 </defs>
                             </motion.svg>
-                            <img
-                                src={`/.jpg?height=600&width=800&query=${encodeURIComponent(
-                                    `${p.title} ${p.category}`,
-                                )}`}
-                                alt={`${p.title} — ${p.category}`}
-                                loading="lazy"
-                                className="h-56 w-full object-cover"
-                            />
-                            <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
-                                <div className="w-full p-4">
+                            <div className="h-48 w-full bg-gradient-to-br from-[var(--brand-saffron)]/20 to-[var(--brand-green)]/20 sm:h-56" />
+                            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-4">
+                                <div>
                                     <div className="text-sm font-semibold">{p.title}</div>
                                     <div className="text-xs text-foreground/80">{p.category}</div>
                                 </div>

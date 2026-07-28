@@ -26,9 +26,9 @@ export function Hero() {
                     className="absolute inset-0"
                     animate={{
                         background: [
-                            "radial-gradient(60% 50% at 50% 10%, rgba(139,92,246,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(0,122,255,0.12), transparent)",
-                            "radial-gradient(60% 50% at 30% 20%, rgba(139,92,246,0.2), transparent), radial-gradient(40% 40% at 70% 30%, rgba(0,122,255,0.18), transparent)",
-                            "radial-gradient(60% 50% at 50% 10%, rgba(139,92,246,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(0,122,255,0.12), transparent)",
+                            "radial-gradient(60% 50% at 50% 10%, rgba(15,157,88,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(255,107,0,0.12), transparent)",
+                            "radial-gradient(60% 50% at 30% 20%, rgba(15,157,88,0.2), transparent), radial-gradient(40% 40% at 70% 30%, rgba(255,107,0,0.18), transparent)",
+                            "radial-gradient(60% 50% at 50% 10%, rgba(15,157,88,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(255,107,0,0.12), transparent)",
                         ],
                     }}
                     transition={{

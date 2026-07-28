@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
 import { Moon, Sun } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Link, NavLink } from "react-router-dom"
 import { useTheme } from "./theme-provider"
 
 const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Projects", href: "#portfolio" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
+    { label: "Services", to: "/services" },
+    { label: "Projects", to: "/portfolio" },
+    { label: "Contact", to: "/contact" },
 ]
 
 export function Navbar() {
@@ -41,49 +42,44 @@ export function Navbar() {
             role="banner"
         >
             <nav className="mx-auto flex max-w-6xl items-center justify-between px-2 py-2" aria-label="Primary">
-                <motion.a
-                    href="#home"
-                    className="flex items-center"
+                <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <motion.img
-                        src="/logo2.png"
-                        alt="ContentOcean Logo"
-                        className="h-30 object-contain drop-shadow-md rounded-full"
-                        whileHover={{
-                            scale: 1.05,
-                            rotate: [0, -1, 1, 0]
-                        }}
-                        transition={{ duration: 0.3 }}
-                    />
-                </motion.a>
+                    <Link to="/" className="flex items-center">
+                        <motion.img
+                            src="/logo2.png"
+                            alt="Onex Digital Services Logo"
+                            className="h-16 object-contain drop-shadow-md rounded-full sm:h-20 md:h-30"
+                            whileHover={{
+                                scale: 1.05,
+                                rotate: [0, -1, 1, 0]
+                            }}
+                            transition={{ duration: 0.3 }}
+                        />
+                    </Link>
+                </motion.div>
 
                 <ul className="hidden items-center gap-6 md:flex">
                     {navItems.map((item, index) => (
                         <motion.li
-                            key={item.href}
+                            key={item.to}
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <motion.a
-                                href={item.href}
-                                className="text-sm text-foreground/80 hover:text-foreground transition-colors relative"
-                                whileHover={{
-                                    scale: 1.1,
-                                    textShadow: "0 0 8px rgba(0,122,255,0.5)"
-                                }}
-                                whileTap={{ scale: 0.95 }}
+                            <NavLink
+                                to={item.to}
+                                end={item.to === "/"}
+                                className={({ isActive }) =>
+                                    [
+                                        "text-sm transition-colors relative",
+                                        isActive ? "text-primary font-semibold" : "text-foreground/80 hover:text-foreground",
+                                    ].join(" ")
+                                }
                             >
                                 {item.label}
-                                <motion.div
-                                    className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"
-                                    initial={{ width: 0 }}
-                                    whileHover={{ width: "100%" }}
-                                    transition={{ duration: 0.3 }}
-                                />
-                            </motion.a>
+                            </NavLink>
                         </motion.li>
                     ))}
                 </ul>
@@ -111,25 +107,28 @@ export function Navbar() {
                             )}
                         </motion.div>
                     </motion.button>
-                    <motion.a
-                        href="#contact"
-                        className="rounded-xl px-4 py-2 text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
+                    <motion.div
                         whileHover={{
                             scale: 1.05,
-                            boxShadow: "0 0 32px rgba(0,122,255,0.4)",
+                            boxShadow: "0 0 32px rgba(255,107,0,0.4)",
                             y: -2
                         }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {"Let’s Talk"}
-                    </motion.a>
+                        <Link
+                            to="/contact"
+                            className="rounded-xl px-4 py-2 text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
+                        >
+                            {"Let's Talk"}
+                        </Link>
+                    </motion.div>
                 </div>
 
                 {/* Mobile menu button */}
                 <motion.button
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 overflow-hidden"
+                    className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg transition-all duration-300 overflow-hidden"
                     aria-label="Toggle menu"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
@@ -158,24 +157,28 @@ export function Navbar() {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.8, y: -20 }}
                             transition={{ duration: 0.3 }}
-                            className="absolute top-full right-4 mt-2 space-y-2 rounded-xl border border-border bg-background/95 p-3 shadow-lg md:hidden"
+                            className="absolute top-full right-4 left-4 mt-2 space-y-2 rounded-xl border border-border bg-background/95 p-3 shadow-lg sm:left-auto sm:w-64 md:hidden"
                         >
                             {navItems.map((item, index) => (
                                 <motion.li
-                                    key={item.href}
+                                    key={item.to}
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.3, delay: index * 0.1 }}
                                 >
-                                    <motion.a
-                                        href={item.href}
-                                        className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-foreground/5 hover:text-foreground"
+                                    <NavLink
+                                        to={item.to}
+                                        end={item.to === "/"}
                                         onClick={() => setMenuOpen(false)}
-                                        whileHover={{ scale: 1.05, x: 5 }}
-                                        whileTap={{ scale: 0.95 }}
+                                        className={({ isActive }) =>
+                                            [
+                                                "block rounded-md px-3 py-2 text-sm hover:bg-foreground/5",
+                                                isActive ? "text-primary font-semibold" : "text-foreground/80 hover:text-foreground",
+                                            ].join(" ")
+                                        }
                                     >
                                         {item.label}
-                                    </motion.a>
+                                    </NavLink>
                                 </motion.li>
                             ))}
                             <motion.li
@@ -205,15 +208,13 @@ export function Navbar() {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.3, delay: (navItems.length + 1) * 0.1 }}
                             >
-                                <motion.a
-                                    href="#contact"
+                                <Link
+                                    to="/contact"
                                     className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
                                     onClick={() => setMenuOpen(false)}
-                                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0,122,255,0.4)" }}
-                                    whileTap={{ scale: 0.95 }}
                                 >
-                                    {"Let’s Talk"}
-                                </motion.a>
+                                    {"Let's Talk"}
+                                </Link>
                             </motion.li>
                         </motion.ul>
                     )}
