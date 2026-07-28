@@ -54,9 +54,9 @@ export function Navbar() {
                 >
                     <Link to="/" className="flex items-center">
                         <motion.img
-                            src="/logo2.png"
+                            src="/logo.png"
                             alt="Onex Digital Services Logo"
-                            className="h-16 object-contain drop-shadow-md rounded-full sm:h-20 md:h-30"
+                            className="h-16 object-contain drop-shadow-md sm:h-20 md:h-30"
                             whileHover={{
                                 scale: 1.05,
                                 rotate: [0, -1, 1, 0]
