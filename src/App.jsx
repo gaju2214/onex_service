@@ -1,4 +1,5 @@
 import { About } from "./Components/about"
+import { ClientLogos } from "./Components/ClientLogos"
 import { Contact } from "./Components/contact"
 import { FloatingStickers } from "./Components/FloatingStickers"
 import { Footer } from "./Components/footer"
@@ -19,6 +20,7 @@ function App() {
       <div className="flex min-h-screen flex-col">
         <Navbar />
         <Hero />
+        <ClientLogos />
         <About />
         <Services />
         {/* <Testimonials /> */}
