@@ -3,6 +3,7 @@ import { ClientLogos } from "./Components/ClientLogos"
 import { Contact } from "./Components/contact"
 import { FloatingStickers } from "./Components/FloatingStickers"
 import { Footer } from "./Components/footer"
+import { GrowthDashboard } from "./Components/GrowthDashboard"
 import { Hero } from "./Components/hero"
 import { Navbar } from "./Components/navbar"
 import { Portfolio } from "./Components/portfolio"
@@ -25,6 +26,7 @@ function App() {
         <About />
         <Services />
         <ReelsShowcase />
+        <GrowthDashboard />
         {/* <Testimonials /> */}
         {/* <Portfolio /> */}
         <WebsiteDevelopment />
