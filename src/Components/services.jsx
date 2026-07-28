@@ -82,19 +82,19 @@ export function Services() {
                                 />
                                 <defs>
                                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="var(--brand-blue)">
-                                            <animate attributeName="stop-color" values="var(--brand-blue);var(--brand-purple)" dur="2s" begin="1.5s" />
+                                        <stop offset="0%" stopColor="var(--brand-saffron)">
+                                            <animate attributeName="stop-color" values="var(--brand-saffron);var(--brand-green)" dur="2s" begin="1.5s" />
                                         </stop>
                                         <stop offset="50%" stopColor="transparent" />
-                                        <stop offset="100%" stopColor="var(--brand-purple)">
-                                            <animate attributeName="stop-color" values="var(--brand-purple);var(--brand-blue)" dur="2s" begin="1.5s" />
+                                        <stop offset="100%" stopColor="var(--brand-green)">
+                                            <animate attributeName="stop-color" values="var(--brand-green);var(--brand-saffron)" dur="2s" begin="1.5s" />
                                         </stop>
                                     </linearGradient>
                                 </defs>
                             </motion.svg>
                             <div className="flex items-center justify-between">
                                 <div className="text-base font-semibold">{item.title}</div>
-                                <item.icon className="h-8 w-8 text-[var(--brand-blue)] transition-colors group-hover:text-[var(--brand-purple)]" />
+                                <item.icon className="h-8 w-8 text-[var(--brand-saffron)] transition-colors group-hover:text-[var(--brand-green)]" />
                             </div>
                             <p className="mt-2 text-sm text-foreground/70">
                                 {item.description}
@@ -141,9 +141,9 @@ export function Services() {
                                 />
                                 <defs>
                                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="var(--brand-blue)" />
+                                        <stop offset="0%" stopColor="var(--brand-saffron)" />
                                         <stop offset="50%" stopColor="transparent" />
-                                        <stop offset="100%" stopColor="var(--brand-purple)" />
+                                        <stop offset="100%" stopColor="var(--brand-green)" />
                                     </linearGradient>
                                 </defs>
                             </motion.svg>

@@ -113,7 +113,7 @@ export function Navbar() {
                     </motion.button>
                     <motion.a
                         href="#contact"
-                        className="rounded-xl px-4 py-2 text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-purple)]"
+                        className="rounded-xl px-4 py-2 text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
                         whileHover={{
                             scale: 1.05,
                             boxShadow: "0 0 32px rgba(0,122,255,0.4)",
@@ -207,7 +207,7 @@ export function Navbar() {
                             >
                                 <motion.a
                                     href="#contact"
-                                    className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-purple)]"
+                                    className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
                                     onClick={() => setMenuOpen(false)}
                                     whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0,122,255,0.4)" }}
                                     whileTap={{ scale: 0.95 }}

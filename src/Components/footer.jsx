@@ -33,7 +33,7 @@ export function Footer() {
                     >
                         <div className="flex items-center gap-2">
                             <motion.div
-                                className="h-6 w-6 rounded-md bg-gradient-to-br from-[var(--brand-blue)] to-[var(--brand-purple)]"
+                                className="h-6 w-6 rounded-md bg-gradient-to-br from-[var(--brand-saffron)] to-[var(--brand-green)]"
                                 aria-hidden="true"
                                 whileHover={{ rotate: 360, scale: 1.1 }}
                                 transition={{ duration: 0.5 }}
@@ -207,7 +207,7 @@ export function Footer() {
                 </motion.div>
 
                 <motion.div
-                    className="mx-auto mt-8 h-px max-w-6xl bg-gradient-to-r from-[var(--brand-blue)] via-transparent to-[var(--brand-purple)]"
+                    className="mx-auto mt-8 h-px max-w-6xl bg-gradient-to-r from-[var(--brand-saffron)] via-transparent to-[var(--brand-green)]"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}

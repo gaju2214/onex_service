@@ -134,7 +134,7 @@ export function Hero() {
                         >
                             <a
                                 href="#services"
-                                className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-foreground shadow-[0_0_0_0_rgba(0,0,0,0)] ring-1 ring-primary/30 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_32px] hover:shadow-primary/40 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-purple)]"
+                                className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-foreground shadow-[0_0_0_0_rgba(0,0,0,0)] ring-1 ring-primary/30 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_32px] hover:shadow-primary/40 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
                             >
                                 Explore Our Services →
                             </a>

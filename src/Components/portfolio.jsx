@@ -69,12 +69,12 @@ export function Portfolio() {
                                 />
                                 <defs>
                                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="var(--brand-blue)">
-                                            <animate attributeName="stop-color" values="var(--brand-blue);var(--brand-purple)" dur="2s" begin="1.5s" />
+                                        <stop offset="0%" stopColor="var(--brand-saffron)">
+                                            <animate attributeName="stop-color" values="var(--brand-saffron);var(--brand-green)" dur="2s" begin="1.5s" />
                                         </stop>
                                         <stop offset="50%" stopColor="transparent" />
-                                        <stop offset="100%" stopColor="var(--brand-purple)">
-                                            <animate attributeName="stop-color" values="var(--brand-purple);var(--brand-blue)" dur="2s" begin="1.5s" />
+                                        <stop offset="100%" stopColor="var(--brand-green)">
+                                            <animate attributeName="stop-color" values="var(--brand-green);var(--brand-saffron)" dur="2s" begin="1.5s" />
                                         </stop>
                                     </linearGradient>
                                 </defs>
@@ -101,7 +101,7 @@ export function Portfolio() {
                     <div className="mt-8 text-center">
                         <button
                             onClick={() => setShowAll(!showAll)}
-                            className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-foreground ring-1 ring-primary/20 transition-shadow hover:shadow-[0_0_28px] hover:shadow-primary/40 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-purple)]"
+                            className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-foreground ring-1 ring-primary/20 transition-shadow hover:shadow-[0_0_28px] hover:shadow-primary/40 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
                         >
                             {showAll ? "View Less" : "View More"}
                         </button>
