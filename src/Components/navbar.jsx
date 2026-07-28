@@ -40,10 +40,8 @@ export function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={[
-                "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-                solid
-                    ? "bg-background/90 backdrop-blur supports-[backdrop-filter]:backdrop-blur border-b border-border shadow-lg"
-                    : "bg-transparent",
+                "fixed inset-x-0 top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur transition-all duration-300",
+                solid ? "border-b border-border shadow-lg" : "",
             ].join(" ")}
             role="banner"
         >
@@ -54,7 +52,7 @@ export function Navbar() {
                 >
                     <Link to="/" className="flex items-center">
                         <motion.img
-                            src="/logo.png"
+                            src="/logo2.png"
                             alt="Onex Digital Services Logo"
                             className="h-16 object-contain drop-shadow-md sm:h-20 md:h-30"
                             whileHover={{
