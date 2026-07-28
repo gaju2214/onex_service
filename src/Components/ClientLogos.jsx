@@ -50,7 +50,7 @@ export function ClientLogos() {
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5 }}
             >
-                Trusted by <span className="text-[var(--brand-saffron)]">Businesses</span> Across India
+                Trusted by <span className="text-[var(--brand-gold)]">Businesses</span> Across India
             </motion.h2>
 
             <div className="relative mt-8 w-full">

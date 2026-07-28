@@ -53,12 +53,12 @@ export function About() {
                                 />
                                 <defs>
                                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="var(--brand-saffron)">
-                                            <animate attributeName="stop-color" values="var(--brand-saffron);var(--brand-green)" dur="2s" begin="1.5s" />
+                                        <stop offset="0%" stopColor="var(--brand-gold)">
+                                            <animate attributeName="stop-color" values="var(--brand-gold);var(--brand-graphite)" dur="2s" begin="1.5s" />
                                         </stop>
                                         <stop offset="50%" stopColor="transparent" />
-                                        <stop offset="100%" stopColor="var(--brand-green)">
-                                            <animate attributeName="stop-color" values="var(--brand-green);var(--brand-saffron)" dur="2s" begin="1.5s" />
+                                        <stop offset="100%" stopColor="var(--brand-graphite)">
+                                            <animate attributeName="stop-color" values="var(--brand-graphite);var(--brand-gold)" dur="2s" begin="1.5s" />
                                         </stop>
                                     </linearGradient>
                                 </defs>
@@ -81,7 +81,7 @@ export function About() {
                                 whileHover={{
                                     scale: 1.2,
                                     rotate: 360,
-                                    color: "var(--brand-green)"
+                                    color: "var(--brand-graphite)"
                                 }}
                                 transition={{ duration: 0.5 }}
                             >
@@ -167,12 +167,12 @@ export function About() {
                                 />
                                 <defs>
                                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="var(--brand-saffron)">
-                                            <animate attributeName="stop-color" values="var(--brand-saffron);var(--brand-green)" dur="2s" begin="1.5s" />
+                                        <stop offset="0%" stopColor="var(--brand-gold)">
+                                            <animate attributeName="stop-color" values="var(--brand-gold);var(--brand-graphite)" dur="2s" begin="1.5s" />
                                         </stop>
                                         <stop offset="50%" stopColor="transparent" />
-                                        <stop offset="100%" stopColor="var(--brand-green)">
-                                            <animate attributeName="stop-color" values="var(--brand-green);var(--brand-saffron)" dur="2s" begin="1.5s" />
+                                        <stop offset="100%" stopColor="var(--brand-graphite)">
+                                            <animate attributeName="stop-color" values="var(--brand-graphite);var(--brand-gold)" dur="2s" begin="1.5s" />
                                         </stop>
                                     </linearGradient>
                                 </defs>

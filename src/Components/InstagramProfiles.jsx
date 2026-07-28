@@ -63,7 +63,7 @@ export function InstagramProfiles() {
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.5 }}
                 >
-                    Live on <span className="text-[var(--brand-saffron)]">Instagram</span>
+                    Live on <span className="text-[var(--brand-gold)]">Instagram</span>
                 </motion.h2>
                 <p className="mt-2 text-center text-sm text-muted-foreground">
                     Real client profiles we manage, embedded live from Instagram.

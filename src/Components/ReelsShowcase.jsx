@@ -69,7 +69,7 @@ export function ReelsShowcase() {
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.5 }}
                 >
-                    Reels That Went <span className="text-[var(--brand-green)]">Viral</span>
+                    Reels That Went <span className="text-[var(--brand-graphite)]">Viral</span>
                 </motion.h2>
 
                 <div className="mt-8">

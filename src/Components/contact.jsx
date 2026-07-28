@@ -49,7 +49,7 @@ export function Contact() {
                         href="https://wa.me/7875359828"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-foreground ring-1 ring-primary/20 transition hover:animate-pulse bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)] sm:px-8 sm:py-4 sm:text-lg"
+                        className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-[#1a1a1a] ring-1 ring-primary/20 transition hover:animate-pulse bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)] sm:px-8 sm:py-4 sm:text-lg"
                     >
                         Contact Us on WhatsApp
                     </a>
@@ -106,7 +106,7 @@ export function Contact() {
 
                             <button
                                 type="submit"
-                                className="w-full rounded-xl px-5 py-3 text-sm font-semibold text-foreground ring-1 ring-primary/20 transition hover:-translate-y-0.5 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
+                                className="w-full rounded-xl px-5 py-3 text-sm font-semibold text-[#1a1a1a] ring-1 ring-primary/20 transition hover:-translate-y-0.5 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                             >
                                 Send via WhatsApp
                             </button>

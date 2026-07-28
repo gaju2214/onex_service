@@ -159,9 +159,9 @@ export function Testimonials() {
                                             />
                                             <defs>
                                                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                    <stop offset="0%" stopColor="var(--brand-saffron)" />
+                                                    <stop offset="0%" stopColor="var(--brand-gold)" />
                                                     <stop offset="50%" stopColor="transparent" />
-                                                    <stop offset="100%" stopColor="var(--brand-green)" />
+                                                    <stop offset="100%" stopColor="var(--brand-graphite)" />
                                                 </linearGradient>
                                             </defs>
                                         </motion.svg>

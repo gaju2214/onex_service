@@ -26,9 +26,9 @@ export function Hero() {
                     className="absolute inset-0"
                     animate={{
                         background: [
-                            "radial-gradient(60% 50% at 50% 10%, rgba(15,157,88,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(255,107,0,0.12), transparent)",
-                            "radial-gradient(60% 50% at 30% 20%, rgba(15,157,88,0.2), transparent), radial-gradient(40% 40% at 70% 30%, rgba(255,107,0,0.18), transparent)",
-                            "radial-gradient(60% 50% at 50% 10%, rgba(15,157,88,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(255,107,0,0.12), transparent)",
+                            "radial-gradient(60% 50% at 50% 10%, rgba(63,63,70,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(184,134,11,0.12), transparent)",
+                            "radial-gradient(60% 50% at 30% 20%, rgba(63,63,70,0.2), transparent), radial-gradient(40% 40% at 70% 30%, rgba(184,134,11,0.18), transparent)",
+                            "radial-gradient(60% 50% at 50% 10%, rgba(63,63,70,0.15), transparent), radial-gradient(40% 40% at 80% 20%, rgba(184,134,11,0.12), transparent)",
                         ],
                     }}
                     transition={{
@@ -134,7 +134,7 @@ export function Hero() {
                         >
                             <a
                                 href="#services"
-                                className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-foreground shadow-[0_0_0_0_rgba(0,0,0,0)] ring-1 ring-primary/30 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_32px] hover:shadow-primary/40 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
+                                className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-[#1a1a1a] shadow-[0_0_0_0_rgba(0,0,0,0)] ring-1 ring-primary/30 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_32px] hover:shadow-primary/40 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                             >
                                 Explore Our Services →
                             </a>

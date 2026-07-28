@@ -38,7 +38,7 @@ export function GrowthDashboard() {
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.5 }}
                 >
-                    Real Results, Real <span className="text-[var(--brand-green)]">Growth</span>
+                    Real Results, Real <span className="text-[var(--brand-graphite)]">Growth</span>
                 </motion.h2>
                 <p className="mt-2 text-center text-sm text-muted-foreground">
                     Real screenshots from our client growth dashboards.

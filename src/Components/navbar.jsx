@@ -116,7 +116,7 @@ export function Navbar() {
                     <motion.div
                         whileHover={{
                             scale: 1.05,
-                            boxShadow: "0 0 32px rgba(255,107,0,0.4)",
+                            boxShadow: "0 0 32px rgba(184,134,11,0.4)",
                             y: -2
                         }}
                         whileTap={{ scale: 0.95 }}
@@ -124,7 +124,7 @@ export function Navbar() {
                     >
                         <Link
                             to="/contact"
-                            className="rounded-xl px-4 py-2 text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
+                            className="rounded-xl px-4 py-2 text-sm font-semibold text-[#1a1a1a] shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                         >
                             {"Let's Talk"}
                         </Link>
@@ -216,7 +216,7 @@ export function Navbar() {
                             >
                                 <Link
                                     to="/contact"
-                                    className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-foreground shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
+                                    className="block rounded-lg px-3 py-2 text-center text-sm font-semibold text-[#1a1a1a] shadow-lg ring-1 ring-primary/20 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                                     onClick={() => setMenuOpen(false)}
                                 >
                                     {"Let's Talk"}

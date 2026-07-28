@@ -65,12 +65,12 @@ export function WebsiteDevelopment() {
                                 />
                                 <defs>
                                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="var(--brand-saffron)">
-                                            <animate attributeName="stop-color" values="var(--brand-saffron);var(--brand-green)" dur="2s" begin="1.5s" />
+                                        <stop offset="0%" stopColor="var(--brand-gold)">
+                                            <animate attributeName="stop-color" values="var(--brand-gold);var(--brand-graphite)" dur="2s" begin="1.5s" />
                                         </stop>
                                         <stop offset="50%" stopColor="transparent" />
-                                        <stop offset="100%" stopColor="var(--brand-green)">
-                                            <animate attributeName="stop-color" values="var(--brand-green);var(--brand-saffron)" dur="2s" begin="1.5s" />
+                                        <stop offset="100%" stopColor="var(--brand-graphite)">
+                                            <animate attributeName="stop-color" values="var(--brand-graphite);var(--brand-gold)" dur="2s" begin="1.5s" />
                                         </stop>
                                     </linearGradient>
                                 </defs>
@@ -84,7 +84,7 @@ export function WebsiteDevelopment() {
                 <div className="mt-8 text-center">
                     <Link
                         to="/portfolio"
-                        className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-foreground ring-1 ring-primary/20 transition-shadow hover:shadow-[0_0_28px] hover:shadow-primary/40 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
+                        className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-[#1a1a1a] ring-1 ring-primary/20 transition-shadow hover:shadow-[0_0_28px] hover:shadow-primary/40 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                     >
                         View Our Work
                     </Link>

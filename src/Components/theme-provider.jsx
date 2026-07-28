@@ -5,9 +5,9 @@ const ThemeContext = React.createContext()
 export function ThemeProvider({ children, ...props }) {
     const [theme, setTheme] = React.useState(() => {
         if (typeof window !== 'undefined') {
-            return localStorage.getItem('theme') || 'light'
+            return localStorage.getItem('theme') || 'dark'
         }
-        return 'light'
+        return 'dark'
     })
 
     React.useEffect(() => {
