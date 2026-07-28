@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 const cards = [
     {
@@ -81,12 +82,12 @@ export function WebsiteDevelopment() {
                 </div>
 
                 <div className="mt-8 text-center">
-                    <a
-                        href="#portfolio"
+                    <Link
+                        to="/portfolio"
                         className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-foreground ring-1 ring-primary/20 transition-shadow hover:shadow-[0_0_28px] hover:shadow-primary/40 bg-gradient-to-r from-[var(--brand-saffron)] to-[var(--brand-green)]"
                     >
                         View Our Work
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>
