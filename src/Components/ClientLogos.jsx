@@ -18,7 +18,7 @@ const clients = [
 
 function LogoCard({ client }) {
     return (
-        <div className="mx-3 flex h-20 w-36 flex-shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border border-border bg-foreground/5 px-3 backdrop-blur sm:mx-4 sm:h-24 sm:w-44 sm:px-4">
+        <div className="mx-3 flex min-h-28 w-36 flex-shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border border-border bg-foreground/5 px-3 py-3 backdrop-blur sm:mx-4 sm:min-h-32 sm:w-44 sm:px-4">
             <img
                 src={client.logo}
                 alt={`${client.name} logo`}
