@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-const headingText = "Accelerate Growth with Advanced Digital Marketing! Solutions";
+const headingText = "Best Social Media Marketing Agency in Jalgaon";
 
 const containerVariants = {
     hidden: {},
