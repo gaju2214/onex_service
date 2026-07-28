@@ -6,6 +6,7 @@ import { Footer } from "./Components/footer"
 import { Hero } from "./Components/hero"
 import { Navbar } from "./Components/navbar"
 import { Portfolio } from "./Components/portfolio"
+import { ReelsShowcase } from "./Components/ReelsShowcase"
 import { Services } from "./Components/services"
 import { Testimonials } from "./Components/testimonials"
 import { ThemeProvider } from "./Components/theme-provider"
@@ -23,6 +24,7 @@ function App() {
         <ClientLogos />
         <About />
         <Services />
+        <ReelsShowcase />
         {/* <Testimonials /> */}
         {/* <Portfolio /> */}
         <WebsiteDevelopment />
