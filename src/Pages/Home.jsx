@@ -4,6 +4,7 @@ import { ClientLogos } from "../Components/ClientLogos"
 import { Services } from "../Components/services"
 import { ReelsShowcase } from "../Components/ReelsShowcase"
 import { GrowthDashboard } from "../Components/GrowthDashboard"
+import { InstagramProfiles } from "../Components/InstagramProfiles"
 import { Testimonials } from "../Components/testimonials"
 
 export function Home() {
@@ -18,6 +19,7 @@ export function Home() {
             <Services />
             <ReelsShowcase />
             <GrowthDashboard />
+            <InstagramProfiles />
             <Testimonials />
         </>
     )

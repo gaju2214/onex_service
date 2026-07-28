@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
+import { loadInstagramEmbedScript, chunk } from "../lib/instagramEmbed"
 
 // Real reel links, sourced from public/reel.txt. Per-reel client/result
 // mapping wasn't supplied, so captions stay generic until that's available.
@@ -22,30 +23,6 @@ const reels = [
 ]
 
 const REELS_PER_SLIDE = 3
-
-function chunk(items, size) {
-    const groups = []
-    for (let i = 0; i < items.length; i += size) {
-        groups.push(items.slice(i, i + size))
-    }
-    return groups
-}
-
-function loadInstagramEmbedScript() {
-    if (window.instgrm) {
-        window.instgrm.Embeds.process()
-        return
-    }
-    const existing = document.getElementById("instagram-embed-script")
-    if (existing) return
-
-    const script = document.createElement("script")
-    script.id = "instagram-embed-script"
-    script.src = "https://www.instagram.com/embed.js"
-    script.async = true
-    script.onload = () => window.instgrm && window.instgrm.Embeds.process()
-    document.body.appendChild(script)
-}
 
 function ReelCard({ reel, i }) {
     return (
