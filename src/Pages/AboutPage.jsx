@@ -5,8 +5,9 @@ export function AboutPage() {
     return (
         <>
             <SEO
-                title="About Us | Onex Digital Services"
-                description="Meet the team behind Onex Digital Services — helping Indian businesses grow through social media marketing, content creation, and web development."
+                title="About Us | Onex Service, Jalgaon"
+                description="Meet the team behind Onex Service — helping businesses in Jalgaon and across India grow through social media marketing, content creation, and web development."
+                keywords="about Onex Service, social media agency Jalgaon team, digital marketing team Jalgaon"
             />
             <About />
         </>

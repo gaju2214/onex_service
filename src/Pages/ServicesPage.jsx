@@ -6,8 +6,9 @@ export function ServicesPage() {
     return (
         <>
             <SEO
-                title="Our Services | Onex Digital Services"
-                description="Social media marketing, content creation, Meta ads, and web development services for growing Indian businesses."
+                title="Our Services | Onex Service, Jalgaon"
+                description="Social media marketing, content creation, Meta ads, and web development services for growing businesses in Jalgaon and across India."
+                keywords="social media marketing services Jalgaon, Meta ads services, content creation services, website development Jalgaon, digital marketing services"
             />
             <Services />
             <WebsiteDevelopment />
