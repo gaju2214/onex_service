@@ -193,6 +193,22 @@
   }
 }
 
+/* Instagram embeds: undo Tailwind preflight resets that break Instagram's
+   own centering (blockquote margin) and placeholder layout (img max-width),
+   which otherwise show the reel left-aligned with empty space on the right
+   and overlapping name/username text before the embed script finishes. */
+.instagram-media {
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  min-width: 280px !important;
+}
+
+.instagram-media img {
+  max-width: none !important;
+  height: auto !important;
+}
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;

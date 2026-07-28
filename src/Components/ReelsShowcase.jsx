@@ -32,6 +32,13 @@ function loadInstagramEmbedScript() {
 export function ReelsShowcase() {
     useEffect(() => {
         loadInstagramEmbedScript()
+        // Instagram's script can run before the carousel finishes laying
+        // out; re-process shortly after mount so embeds pick up the
+        // correct container width instead of a stale/overlapping layout.
+        const timeout = setTimeout(() => {
+            window.instgrm && window.instgrm.Embeds.process()
+        }, 500)
+        return () => clearTimeout(timeout)
     }, [])
 
     return (
@@ -51,9 +58,9 @@ export function ReelsShowcase() {
                     <Carousel opts={{ align: "start" }}>
                         <CarouselContent>
                             {reels.map((reel, i) => (
-                                <CarouselItem key={reel.permalink} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                                <CarouselItem key={reel.permalink} className="basis-full">
                                     <motion.div
-                                        className="rounded-2xl border border-border bg-foreground/5 p-4 backdrop-blur"
+                                        className="mx-auto flex max-w-[420px] flex-col items-center rounded-2xl border border-border bg-foreground/5 p-4 backdrop-blur"
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, amount: 0.3 }}
