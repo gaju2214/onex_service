@@ -18,6 +18,7 @@ import { AppDevelopmentPage } from "./Pages/AppDevelopmentPage"
 import { PricingPage } from "./Pages/PricingPage"
 import { CategoryPage } from "./Components/CategoryPage"
 import { categories } from "./data/categories"
+import { CategoriesPage } from "./Pages/CategoriesPage"
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/web-development" element={<WebDevelopmentPage />} />
             <Route path="/app-development" element={<AppDevelopmentPage />} />
             <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/industries" element={<CategoriesPage />} />
             <Route path="/for-coaching-institutes" element={<CategoryPage data={categories.coachingInstitutes} />} />
             <Route path="/for-clinics-hospitals" element={<CategoryPage data={categories.clinicsHospitals} />} />
             <Route path="/for-real-estate" element={<CategoryPage data={categories.realEstate} />} />
