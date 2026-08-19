@@ -47,6 +47,7 @@ function App() {
             <Route path="/for-real-estate" element={<CategoryPage data={categories.realEstate} />} />
             <Route path="/for-restaurants" element={<CategoryPage data={categories.restaurants} />} />
             <Route path="/for-retail-d2c" element={<CategoryPage data={categories.retailD2c} />} />
+            <Route path="/for-wedding-events" element={<CategoryPage data={categories.weddingEvents} />} />
           </Routes>
         </main>
         <Footer />

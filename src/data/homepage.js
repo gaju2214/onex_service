@@ -26,5 +26,5 @@ export const clientCategories = [
     { label: "Real Estate", icon: "Building2", to: "/for-real-estate" },
     { label: "Restaurants", icon: "UtensilsCrossed", to: "/for-restaurants" },
     { label: "Retail & D2C", icon: "ShoppingBag", to: "/for-retail-d2c" },
-    { label: "Wedding & Events", icon: "PartyPopper", to: null },
+    { label: "Wedding & Events", icon: "PartyPopper", to: "/for-wedding-events" },
 ]

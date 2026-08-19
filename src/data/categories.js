@@ -1,4 +1,4 @@
-import { GraduationCap, Stethoscope, Building2, UtensilsCrossed, ShoppingBag, Clock, Bell, Megaphone, ShieldCheck, MessageCircle, ImagePlay, Utensils, Globe, PackageSearch, Repeat } from "lucide-react"
+import { GraduationCap, Stethoscope, Building2, UtensilsCrossed, ShoppingBag, PartyPopper, Clock, Bell, Megaphone, ShieldCheck, MessageCircle, ImagePlay, Utensils, Globe, PackageSearch, Repeat, Heart, Video, CalendarCheck } from "lucide-react"
 
 // Category landing pages, driven by data so a shared template
 // (src/Components/CategoryPage.jsx) renders all of them. Pain points come
@@ -168,6 +168,39 @@ export const categories = {
                 icon: Globe,
                 title: "E-Commerce Site Needs",
                 description: "From a simple product showcase to a full checkout flow, we build the e-commerce site that matches where your business actually is.",
+            },
+        ],
+    },
+    weddingEvents: {
+        slug: "for-wedding-events",
+        icon: PartyPopper,
+        seoTitle: "Cinematic Wedding & Event Videography Marketing | Jalgaon, Maharashtra",
+        seoDescription: "Cinematic wedding shoots, romantic reels, and WhatsApp booking automation for wedding photographers, videographers, and event vendors in Jalgaon and Maharashtra.",
+        seoKeywords: "cinematic wedding shoot Jalgaon, wedding videography Maharashtra, Indian wedding cinematic film, wedding photographer marketing Jalgaon, pre-wedding shoot Maharashtra, wedding reels Jalgaon, event vendor marketing Maharashtra",
+        eyebrow: "For Wedding & Events",
+        title: "Cinematic wedding content that gets couples booking you",
+        description: "Cinematic shoots, romantic reels, and WhatsApp booking automation — for wedding photographers, videographers, and event vendors across Jalgaon and Maharashtra.",
+        growth: "Every Indian wedding is full of moments worth remembering — haldi, mehendi, sangeet, the pheras, the first dance — and how you capture those moments is what gets you booked for the next one. We help you turn real weddings into cinematic reels that feel romantic and emotional, not just documentation, then follow up every enquiry on WhatsApp before a couple books your competitor instead. The result: content that gets shared, and enquiries that turn into confirmed bookings.",
+        relevantServices: [
+            { key: "socialMediaMarketing", note: "Cinematic wedding reels and highlight content that get shared and booked." },
+            { key: "whatsappBusinessApi", note: "Instant WhatsApp responses so booking enquiries don't go cold." },
+            { key: "webDevelopment", note: "A portfolio website showcasing your best cinematic wedding films." },
+        ],
+        painPoints: [
+            {
+                icon: Video,
+                title: "Cinematic Wedding Shoots",
+                description: "Every ritual — haldi, mehendi, sangeet, the pheras — shot and edited in a cinematic style that captures the romance and emotion of the day, not just a straight recording of events.",
+            },
+            {
+                icon: Heart,
+                title: "Heartfelt Reels & Highlights",
+                description: "Highlight reels built to feel like a love story, not a wedding video — the kind of content couples want to share and their friends want to book you after seeing.",
+            },
+            {
+                icon: CalendarCheck,
+                title: "WhatsApp Booking & Enquiry Automation",
+                description: "Wedding season enquiries come in fast and couples book quickly — automated WhatsApp responses keep you in the running instead of losing bookings to slower replies.",
             },
         ],
     },
