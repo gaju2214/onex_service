@@ -42,12 +42,12 @@ export function BuiltInHouse() {
                             </ul>
                         </div>
                         <a
-                            href="https://oneclickmsg.com"
+                            href="https://msg.oneclickmsg.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex flex-shrink-0 items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-[#1a1a1a] ring-1 ring-primary/20 transition hover:-translate-y-0.5 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                         >
-                            Visit OneClickMsg →
+                            Visit msg.oneclickmsg.com →
                         </a>
                     </div>
                 </motion.div>

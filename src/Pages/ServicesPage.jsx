@@ -2,6 +2,9 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { Share2, MessageCircle, Code2, Smartphone } from "lucide-react"
 import { SEO } from "../Components/SEO"
+import { ProcessFlow } from "../Components/ProcessFlow"
+import { ClientCategories } from "../Components/ClientCategories"
+import { ServiceCTA } from "../Components/ServiceCTA"
 
 const serviceLinks = [
     {
@@ -52,6 +55,19 @@ export function ServicesPage() {
                     <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-muted-foreground">
                         Attention, conversion, and infrastructure — all under one roof.
                     </p>
+                    <motion.p
+                        className="mx-auto mt-4 max-w-2xl text-center text-sm text-foreground/80 md:text-base"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.4 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                        Most agencies do one piece of this — content, or ads, or a website — and leave you to
+                        stitch the rest together yourself. We built our services to work as one connected
+                        system: content and ads bring people in, WhatsApp automation turns them into
+                        conversations and bookings, and your website or app gives your business the
+                        infrastructure to run it all. Pick a service below to see exactly what's included.
+                    </motion.p>
 
                     <div className="mt-10 grid gap-4 sm:grid-cols-2">
                         {serviceLinks.map((service, i) => (
@@ -78,6 +94,9 @@ export function ServicesPage() {
                     </div>
                 </div>
             </section>
+            <ProcessFlow />
+            <ClientCategories />
+            <ServiceCTA />
         </>
     )
 }

@@ -1,6 +1,9 @@
 import { SEO } from "../Components/SEO"
 import { ServiceHero } from "../Components/ServiceHero"
+import { ServiceIntro } from "../Components/ServiceIntro"
 import { ServiceBenefits } from "../Components/ServiceBenefits"
+import { ServiceProcess } from "../Components/ServiceProcess"
+import { ServiceCTA } from "../Components/ServiceCTA"
 import { whatsappBusinessApi as data } from "../data/serviceDetails"
 
 export function WhatsappBusinessApiPage() {
@@ -14,7 +17,10 @@ export function WhatsappBusinessApiPage() {
                     description={data.description}
                     externalLink={data.externalLink}
                 />
+                <ServiceIntro text={data.extended} />
                 <ServiceBenefits benefits={data.benefits} />
+                <ServiceProcess process={data.process} />
+                <ServiceCTA />
             </div>
         </>
     )
