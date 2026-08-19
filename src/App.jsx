@@ -11,6 +11,10 @@ import { ServicesPage } from "./Pages/ServicesPage"
 import { PortfolioPage } from "./Pages/PortfolioPage"
 import { ContactPage } from "./Pages/ContactPage"
 import { FreeAuditRedirect } from "./Pages/FreeAuditRedirect"
+import { SocialMediaMarketingPage } from "./Pages/SocialMediaMarketingPage"
+import { WhatsappBusinessApiPage } from "./Pages/WhatsappBusinessApiPage"
+import { WebDevelopmentPage } from "./Pages/WebDevelopmentPage"
+import { AppDevelopmentPage } from "./Pages/AppDevelopmentPage"
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/free-audit" element={<FreeAuditRedirect />} />
+            <Route path="/social-media-marketing" element={<SocialMediaMarketingPage />} />
+            <Route path="/whatsapp-business-api" element={<WhatsappBusinessApiPage />} />
+            <Route path="/web-development" element={<WebDevelopmentPage />} />
+            <Route path="/app-development" element={<AppDevelopmentPage />} />
           </Routes>
         </main>
         <Footer />

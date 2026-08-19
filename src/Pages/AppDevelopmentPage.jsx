@@ -1,0 +1,16 @@
+import { SEO } from "../Components/SEO"
+import { ServiceHero } from "../Components/ServiceHero"
+import { ServiceBenefits } from "../Components/ServiceBenefits"
+import { appDevelopment as data } from "../data/serviceDetails"
+
+export function AppDevelopmentPage() {
+    return (
+        <>
+            <SEO title={data.seoTitle} description={data.seoDescription} keywords={data.seoKeywords} />
+            <div className="pt-24 sm:pt-28 md:pt-36">
+                <ServiceHero eyebrow={data.eyebrow} title={data.title} description={data.description} />
+                <ServiceBenefits benefits={data.benefits} />
+            </div>
+        </>
+    )
+}
