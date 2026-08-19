@@ -38,8 +38,8 @@ export function ServicesPage() {
         <>
             <SEO
                 title="Our Services | Onex Service, Jalgaon"
-                description="Social media marketing, WhatsApp automation, and web/app development — the full growth funnel for businesses in Jalgaon and across India."
-                keywords="social media marketing services Jalgaon, WhatsApp business API, web development Jalgaon, app development, digital marketing services"
+                description="Social media marketing, WhatsApp automation, and web/app development — the full growth funnel for businesses in Jalgaon, Maharashtra and across India."
+                keywords="social media marketing services Jalgaon, digital marketing agency Maharashtra, WhatsApp business API Jalgaon, web development Jalgaon, app development Maharashtra, full-funnel marketing agency"
             />
             <section className="pt-24 sm:pt-28 md:pt-36 pb-16 md:pb-24" aria-label="Our Services">
                 <div className="mx-auto max-w-6xl px-4">

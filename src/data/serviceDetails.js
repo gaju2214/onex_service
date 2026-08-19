@@ -9,8 +9,8 @@ import { Camera, Megaphone, Instagram, MessageCircle, Zap, Radio, Code2, LayoutT
 
 export const socialMediaMarketing = {
     seoTitle: "Social Media Marketing | Onex Service, Jalgaon",
-    seoDescription: "Reels, promo shoots, Instagram management, and Meta ads management for businesses in Jalgaon and across India.",
-    seoKeywords: "social media marketing Jalgaon, reels production, Instagram management, Meta ads management, promo shoots",
+    seoDescription: "Reels, promo shoots, Instagram management, and Meta ads management for businesses in Jalgaon, Maharashtra and across India.",
+    seoKeywords: "social media marketing Jalgaon, social media marketing agency Maharashtra, reels production Jalgaon, Instagram management Jalgaon, Meta ads management Maharashtra, promo shoots Jalgaon",
     eyebrow: "Social Media Marketing",
     title: "Content that gets your business noticed",
     description: "Reels, promo shoots, Instagram management, and Meta ads — the attention layer of your growth funnel.",
@@ -42,7 +42,7 @@ export const socialMediaMarketing = {
 export const whatsappBusinessApi = {
     seoTitle: "WhatsApp Business API | OneClickMsg by Onex Service",
     seoDescription: "OneClickMsg is our in-house WhatsApp Business API product for bulk messaging, automation, and broadcast — built and supported by Onex Service.",
-    seoKeywords: "WhatsApp Business API Jalgaon, WhatsApp automation, bulk WhatsApp messaging, OneClickMsg, WhatsApp broadcast messaging",
+    seoKeywords: "WhatsApp Business API Jalgaon, WhatsApp Business API Maharashtra, WhatsApp automation Jalgaon, bulk WhatsApp messaging, OneClickMsg, WhatsApp broadcast messaging Maharashtra",
     eyebrow: "WhatsApp Business API",
     title: "OneClickMsg — built in-house by our own team",
     description: "The conversion layer of your growth funnel: automation, broadcast messaging, and business communication on the official Meta Cloud API.",
@@ -79,8 +79,8 @@ export const whatsappBusinessApi = {
 
 export const webDevelopment = {
     seoTitle: "Web Development | Onex Service, Jalgaon",
-    seoDescription: "Dynamic websites, static landing pages, and admin panels — the infrastructure layer of your growth funnel, built by Onex Service.",
-    seoKeywords: "web development Jalgaon, website development, dynamic websites, static websites, admin panel development",
+    seoDescription: "Dynamic websites, static landing pages, and admin panels — the infrastructure layer of your growth funnel, built by Onex Service in Jalgaon, Maharashtra.",
+    seoKeywords: "web development Jalgaon, website development company Maharashtra, dynamic websites Jalgaon, static websites, admin panel development Jalgaon",
     eyebrow: "Web Development",
     title: "A website that runs your business",
     description: "High-performance websites built with React, Next.js, and WordPress — optimized for speed, SEO, and conversions.",
@@ -116,8 +116,8 @@ export const webDevelopment = {
 
 export const appDevelopment = {
     seoTitle: "App Development | Onex Service, Jalgaon",
-    seoDescription: "Mobile and web app development for businesses in Jalgaon and across India — get in touch to discuss your project.",
-    seoKeywords: "app development Jalgaon, mobile app development, business app development",
+    seoDescription: "Mobile and web app development for businesses in Jalgaon, Maharashtra and across India — get in touch to discuss your project.",
+    seoKeywords: "app development Jalgaon, app development company Maharashtra, mobile app development Jalgaon, business app development",
     eyebrow: "App Development",
     title: "Apps built around how your business runs",
     description: "From customer-facing apps to internal tools, we build software tailored to your business — talk to us about what you need and we'll scope the right platform and approach for your project.",

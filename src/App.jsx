@@ -15,6 +15,7 @@ import { SocialMediaMarketingPage } from "./Pages/SocialMediaMarketingPage"
 import { WhatsappBusinessApiPage } from "./Pages/WhatsappBusinessApiPage"
 import { WebDevelopmentPage } from "./Pages/WebDevelopmentPage"
 import { AppDevelopmentPage } from "./Pages/AppDevelopmentPage"
+import { PricingPage } from "./Pages/PricingPage"
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/whatsapp-business-api" element={<WhatsappBusinessApiPage />} />
             <Route path="/web-development" element={<WebDevelopmentPage />} />
             <Route path="/app-development" element={<AppDevelopmentPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
           </Routes>
         </main>
         <Footer />
