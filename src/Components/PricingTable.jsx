@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { Check } from "lucide-react"
-import { pricingTiers } from "../data/pricing"
+import { pricingTiers, pricingFootnote } from "../data/pricing"
 
 export function PricingTable() {
     return (
@@ -63,6 +63,7 @@ export function PricingTable() {
                         </motion.div>
                     ))}
                 </div>
+                <p className="mt-6 text-center text-xs text-foreground/60">{pricingFootnote}</p>
             </div>
         </section>
     )
