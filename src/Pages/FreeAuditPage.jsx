@@ -17,8 +17,8 @@ const CATEGORY_OPTIONS = [
 const INTEREST_OPTIONS = [
     { key: "socialMedia", label: "Social Media Marketing" },
     { key: "whatsappApi", label: "WhatsApp Business API" },
-    { key: "website", label: "Website" },
-    { key: "app", label: "App" },
+    { key: "websiteApp", label: "Website / App" },
+    { key: "all", label: "All" },
 ]
 
 const initialForm = {
