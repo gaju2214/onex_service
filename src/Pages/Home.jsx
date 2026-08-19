@@ -5,6 +5,7 @@ import { ProcessFlow } from "../Components/ProcessFlow"
 import { BuiltInHouse } from "../Components/BuiltInHouse"
 import { Services } from "../Components/services"
 import { ClientCategories } from "../Components/ClientCategories"
+import { FeaturedCaseStudies } from "../Components/FeaturedCaseStudies"
 import { ReelsShowcase } from "../Components/ReelsShowcase"
 import { GrowthDashboard } from "../Components/GrowthDashboard"
 import { InstagramProfiles } from "../Components/InstagramProfiles"
@@ -24,6 +25,7 @@ export function Home() {
             <BuiltInHouse />
             <Services />
             <ClientCategories />
+            <FeaturedCaseStudies />
             <ReelsShowcase />
             <GrowthDashboard />
             <InstagramProfiles />

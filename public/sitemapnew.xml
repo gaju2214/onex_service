@@ -131,4 +131,39 @@
   <priority>0.7</priority>
 </url>
 
+<url>
+  <loc>https://onexservice.in/case-studies</loc>
+  <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://onexservice.in/case-studies/coaching-institute-admissions</loc>
+  <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://onexservice.in/case-studies/restaurant-whatsapp-ordering</loc>
+  <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://onexservice.in/case-studies/real-estate-lead-follow-up</loc>
+  <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://onexservice.in/case-studies/retail-d2c-repeat-customers</loc>
+  <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
 </urlset>

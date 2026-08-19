@@ -130,7 +130,10 @@ export function Footer() {
                                 { to: "/", label: "Home" },
                                 { to: "/about", label: "About" },
                                 { to: "/services", label: "Services" },
+                                { to: "/industries", label: "Industries" },
+                                { to: "/pricing", label: "Pricing" },
                                 { to: "/portfolio", label: "Projects" },
+                                { to: "/case-studies", label: "Case Studies" },
                                 { to: "/contact", label: "Contact" },
                             ].map((link, index) => (
                                 <li key={link.label}>

@@ -10,7 +10,7 @@ import { AboutPage } from "./Pages/AboutPage"
 import { ServicesPage } from "./Pages/ServicesPage"
 import { PortfolioPage } from "./Pages/PortfolioPage"
 import { ContactPage } from "./Pages/ContactPage"
-import { FreeAuditRedirect } from "./Pages/FreeAuditRedirect"
+import { FreeAuditPage } from "./Pages/FreeAuditPage"
 import { SocialMediaMarketingPage } from "./Pages/SocialMediaMarketingPage"
 import { WhatsappBusinessApiPage } from "./Pages/WhatsappBusinessApiPage"
 import { WebDevelopmentPage } from "./Pages/WebDevelopmentPage"
@@ -19,6 +19,8 @@ import { PricingPage } from "./Pages/PricingPage"
 import { CategoryPage } from "./Components/CategoryPage"
 import { categories } from "./data/categories"
 import { CategoriesPage } from "./Pages/CategoriesPage"
+import { CaseStudiesPage } from "./Pages/CaseStudiesPage"
+import { CaseStudyDetailPage } from "./Pages/CaseStudyDetailPage"
 
 function App() {
   return (
@@ -35,7 +37,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/free-audit" element={<FreeAuditRedirect />} />
+            <Route path="/free-audit" element={<FreeAuditPage />} />
             <Route path="/social-media-marketing" element={<SocialMediaMarketingPage />} />
             <Route path="/whatsapp-business-api" element={<WhatsappBusinessApiPage />} />
             <Route path="/web-development" element={<WebDevelopmentPage />} />
@@ -48,6 +50,8 @@ function App() {
             <Route path="/for-restaurants" element={<CategoryPage data={categories.restaurants} />} />
             <Route path="/for-retail-d2c" element={<CategoryPage data={categories.retailD2c} />} />
             <Route path="/for-wedding-events" element={<CategoryPage data={categories.weddingEvents} />} />
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
           </Routes>
         </main>
         <Footer />
