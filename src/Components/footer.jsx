@@ -134,6 +134,7 @@ export function Footer() {
                                 { to: "/pricing", label: "Pricing" },
                                 { to: "/portfolio", label: "Projects" },
                                 { to: "/case-studies", label: "Case Studies" },
+                                { to: "/insights", label: "Insights" },
                                 { to: "/contact", label: "Contact" },
                             ].map((link, index) => (
                                 <li key={link.label}>

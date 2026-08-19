@@ -21,6 +21,8 @@ import { categories } from "./data/categories"
 import { CategoriesPage } from "./Pages/CategoriesPage"
 import { CaseStudiesPage } from "./Pages/CaseStudiesPage"
 import { CaseStudyDetailPage } from "./Pages/CaseStudyDetailPage"
+import { InsightsPage } from "./Pages/InsightsPage"
+import { InsightDetailPage } from "./Pages/InsightDetailPage"
 
 function App() {
   return (
@@ -52,6 +54,8 @@ function App() {
             <Route path="/for-wedding-events" element={<CategoryPage data={categories.weddingEvents} />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
             <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
+            <Route path="/insights" element={<InsightsPage />} />
+            <Route path="/insights/:slug" element={<InsightDetailPage />} />
           </Routes>
         </main>
         <Footer />
