@@ -3,6 +3,7 @@ import { Check } from "lucide-react"
 
 const features = [
     "Bulk & broadcast messaging",
+    "Bulk message to enquiries",
     "Automation & auto-replies",
     "Official Meta Cloud API",
     "Business communication tools",

@@ -1,4 +1,4 @@
-import { Camera, Megaphone, Instagram, MessageCircle, Zap, Radio, Code2, LayoutTemplate, Smartphone, Layers, Rocket } from "lucide-react"
+import { Camera, Megaphone, Instagram, MessageCircle, Zap, Radio, Code2, LayoutTemplate, Smartphone, Layers, Rocket, Send } from "lucide-react"
 
 // Content for the four dedicated service pages. Benefit copy for Social
 // Media Marketing and Web Development reuses real existing descriptions
@@ -68,6 +68,11 @@ export const whatsappBusinessApi = {
             icon: Layers,
             title: "Built & Supported In-House",
             description: "We built OneClickMsg ourselves, so you get direct support from the team that built it — not a reseller.",
+        },
+        {
+            icon: Send,
+            title: "Bulk Message to Enquiries",
+            description: "Send a bulk WhatsApp message to your entire enquiry list at once — updates, offers, and follow-ups delivered instantly, instead of messaging leads one by one.",
         },
     ],
     process: [
