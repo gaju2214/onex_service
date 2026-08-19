@@ -15,6 +15,12 @@ export const categories = {
         eyebrow: "For Coaching Institutes",
         title: "Turn admission enquiries into enrolled students",
         description: "Faster enquiry response, WhatsApp alerts for batches and fees, and content built for admission season — for coaching institutes across Jalgaon and Maharashtra.",
+        growth: "Your growth as a coaching institute comes down to two things: how many students enquire, and how many of those enquiries actually enroll. We help with both — content and ads that bring in enquiries during admission season, and WhatsApp automation that responds to every enquiry instantly instead of losing students to whoever replies first. The result is a full pipeline: attention that brings students in, and communication that gets them enrolled.",
+        relevantServices: [
+            { key: "socialMediaMarketing", note: "Admission-season content and ads that bring in enquiries." },
+            { key: "whatsappBusinessApi", note: "Instant enquiry responses and automated batch/fee alerts." },
+            { key: "webDevelopment", note: "An admissions landing page that captures enquiries directly." },
+        ],
         painPoints: [
             {
                 icon: Clock,
@@ -42,6 +48,12 @@ export const categories = {
         eyebrow: "For Clinics & Hospitals",
         title: "Fewer missed appointments, more patient trust",
         description: "Appointment reminders, trust-building content, and booking websites — for clinics and hospitals across Jalgaon and Maharashtra.",
+        growth: "Growth for a clinic or hospital isn't just new patients — it's patients who trust you enough to book, show up, and come back. We build content that establishes that trust, a booking website that makes appointments easy, and WhatsApp reminders that cut down on no-shows, so the patients you're already attracting actually turn into completed visits.",
+        relevantServices: [
+            { key: "socialMediaMarketing", note: "Trust-building content that showcases your expertise and facility." },
+            { key: "whatsappBusinessApi", note: "Automated appointment reminders and patient communication." },
+            { key: "webDevelopment", note: "A booking website patients can use to schedule directly." },
+        ],
         painPoints: [
             {
                 icon: Bell,
@@ -69,6 +81,12 @@ export const categories = {
         eyebrow: "For Real Estate",
         title: "Turn project interest into site visits",
         description: "Project promo content, WhatsApp lead follow-up, and dedicated project landing pages — for real estate developers and agents across Jalgaon and Maharashtra.",
+        growth: "Real estate growth lives or dies on follow-up. A lead who saw your project reel today and doesn't hear from you for three days has already moved on to another builder. We pair promo content that gets your project noticed with WhatsApp automation that follows up immediately, plus a project landing page that gives serious buyers everything they need to book a site visit.",
+        relevantServices: [
+            { key: "socialMediaMarketing", note: "Project promo reels and content that get your listings noticed." },
+            { key: "whatsappBusinessApi", note: "Automated lead follow-up so enquiries don't go cold." },
+            { key: "webDevelopment", note: "A dedicated landing page per project with pricing and floor plans." },
+        ],
         painPoints: [
             {
                 icon: ImagePlay,
@@ -96,6 +114,12 @@ export const categories = {
         eyebrow: "For Restaurants",
         title: "Fill more tables, take more orders",
         description: "Reels for your menu and offers, WhatsApp ordering, and an online menu site — for restaurants across Jalgaon and Maharashtra.",
+        growth: "For a restaurant, growth means more covers and more repeat orders — and that starts with people seeing your food and being able to act on it immediately. We create reels that make your dishes and offers impossible to scroll past, then make ordering as easy as replying on WhatsApp, backed by an online menu site customers can browse and share.",
+        relevantServices: [
+            { key: "socialMediaMarketing", note: "Food reels and offer content that get people hungry and watching." },
+            { key: "whatsappBusinessApi", note: "WhatsApp ordering and offer alerts with zero app downloads." },
+            { key: "webDevelopment", note: "An online menu site customers can browse and share." },
+        ],
         painPoints: [
             {
                 icon: Utensils,
@@ -123,6 +147,12 @@ export const categories = {
         eyebrow: "For Retail & D2C",
         title: "Turn followers into repeat customers",
         description: "Product reels, WhatsApp catalog and order updates, and e-commerce site builds — for retail and D2C brands across Jalgaon and Maharashtra.",
+        growth: "Growing a retail or D2C brand means turning one-time buyers into repeat customers, not just chasing new followers. We create product reels that drive first purchases, keep customers engaged after the sale with WhatsApp catalog and order updates, and build the e-commerce site that matches where your business actually is — from a simple showcase to full checkout.",
+        relevantServices: [
+            { key: "socialMediaMarketing", note: "Product reels that drive DMs, orders, and first purchases." },
+            { key: "whatsappBusinessApi", note: "WhatsApp catalog browsing and order/shipping updates." },
+            { key: "webDevelopment", note: "An e-commerce site built for how your business actually sells." },
+        ],
         painPoints: [
             {
                 icon: PackageSearch,
