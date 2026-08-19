@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
-const headingText = "Best Social Media Marketing Agency in Jalgaon";
+const headingText = "Jalgaon's Full-Funnel Growth Partner";
 
 const containerVariants = {
     hidden: {},
@@ -123,20 +124,26 @@ export function Hero() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            We help businesses thrive with tailored marketing strategies, expert SEO, and high-converting campaigns for sustainable success.
+                            Content that gets attention. WhatsApp that converts it. A platform that runs your business. We're the only agency in Jalgaon offering the full funnel — social media, WhatsApp automation, and web/app development — under one roof.
                         </motion.p>
                         <motion.div
-                            className="mt-8"
+                            className="mt-8 flex flex-wrap gap-4"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.6 }}
                         >
-                            <a
-                                href="#services"
+                            <Link
+                                to="/free-audit"
                                 className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-[#1a1a1a] shadow-[0_0_0_0_rgba(0,0,0,0)] ring-1 ring-primary/30 transition-all hover:-translate-y-0.5 hover:shadow-[0_0_32px] hover:shadow-primary/40 bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
                             >
-                                Explore Our Services →
+                                Get a Free Audit →
+                            </Link>
+                            <a
+                                href="#services"
+                                className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold text-foreground ring-1 ring-border transition-all hover:-translate-y-0.5 hover:bg-foreground/5"
+                            >
+                                Explore Our Services
                             </a>
                         </motion.div>
                     </motion.div>

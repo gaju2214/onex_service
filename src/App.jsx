@@ -10,6 +10,7 @@ import { AboutPage } from "./Pages/AboutPage"
 import { ServicesPage } from "./Pages/ServicesPage"
 import { PortfolioPage } from "./Pages/PortfolioPage"
 import { ContactPage } from "./Pages/ContactPage"
+import { FreeAuditRedirect } from "./Pages/FreeAuditRedirect"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/free-audit" element={<FreeAuditRedirect />} />
           </Routes>
         </main>
         <Footer />
