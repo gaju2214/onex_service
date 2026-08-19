@@ -2,6 +2,7 @@
 // pricing/features can be updated without touching component code.
 
 export const pricingFootnote = "*Fair usage and scope terms apply — ask us for full details."
+export const pricingCustomNote = "These packages are a starting point — pricing and inclusions can be customized to fit your specific business requirements. Get a free audit and we'll put together a plan tailored to you."
 
 export const pricingTiers = [
     {

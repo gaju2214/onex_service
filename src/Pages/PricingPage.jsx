@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { SEO } from "../Components/SEO"
 import { PricingTable } from "../Components/PricingTable"
 import { ServiceCTA } from "../Components/ServiceCTA"
+import { pricingCustomNote } from "../data/pricing"
 
 export function PricingPage() {
     return (
@@ -33,20 +34,22 @@ export function PricingPage() {
                         media marketing, WhatsApp Business API automation, and web or app development
                         working together as one growth system — not three separate vendors and invoices.
                     </motion.p>
-                    <motion.p
-                        className="mx-auto mt-3 max-w-2xl text-xs text-foreground/60"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true, amount: 0.4 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                        Prices shown are starting estimates. Get a free audit and we'll confirm exact
-                        pricing for your business.
-                    </motion.p>
                 </div>
             </section>
 
             <PricingTable />
+
+            <div className="mx-auto max-w-2xl px-4 pb-16 text-center md:pb-24">
+                <motion.p
+                    className="rounded-2xl border border-border bg-foreground/5 p-4 text-sm text-foreground/80 backdrop-blur"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    {pricingCustomNote}
+                </motion.p>
+            </div>
 
             <section className="border-t border-border py-16 md:py-24" aria-label="Why These Packages">
                 <div className="mx-auto max-w-3xl px-4 text-center">
