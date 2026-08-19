@@ -26,7 +26,7 @@ export function Portfolio() {
     const displayedProjects = showAll ? projects : projects.slice(0, 3)
 
     return (
-        <section id="portfolio" className="scroll-mt-24 border-t border-border py-16 md:py-24" aria-label="Portfolio">
+        <section id="portfolio" className="scroll-mt-24 py-16 md:py-24" aria-label="Portfolio">
             <div className="mx-auto max-w-6xl px-4">
                 <motion.h2
                     className="font-heading text-3xl font-bold md:text-4xl text-center"

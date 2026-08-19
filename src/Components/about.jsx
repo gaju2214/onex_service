@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 export function About() {
     return (
-        <section id="about" className="scroll-mt-24 border-t border-border py-16 md:py-24" aria-label="About ContentOcean">
+        <section id="about" className="scroll-mt-24 py-16 md:py-24" aria-label="About Onex Service">
             <motion.div
                 className="mx-auto max-w-6xl px-4 text-center"
                 initial={{ opacity: 0, y: 24 }}
@@ -12,15 +12,18 @@ export function About() {
             >
                 <h2 className="font-heading text-3xl font-bold md:text-4xl">Who We Are</h2>
                 <p className="mt-4 text-foreground/80">
-                    We are a future-forward agency crafting bold brands that thrive across social and web. Our work blends
-                    strategy, design, and storytelling to help you grow faster.
+                    We're a Jalgaon-based team building the full growth funnel for businesses across
+                    Jalgaon and Maharashtra — content and ads that get attention, WhatsApp automation
+                    (our own product, OneClickMsg) that turns it into conversations, and websites and apps
+                    that give your business the infrastructure to run on. One team, one system, instead of
+                    three separate vendors.
                 </p>
 
                 <div className="mt-8 grid gap-6 md:grid-cols-3">
                     {[
-                        { title: "Our Vision", icon: "M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941", desc: "To be the leading creative agency that empowers brands to thrive in the digital age through innovative storytelling and strategic design." },
-                        { title: "Our Values", icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z", desc: "Integrity, creativity, and collaboration guide our work, ensuring every project delivers exceptional quality and measurable results." },
-                        { title: "Our Edge", icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z", desc: "Cutting-edge technology and data-driven insights give us the competitive advantage to deliver ahead of trends." },
+                        { title: "Our Vision", icon: "M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941", desc: "To be Jalgaon and Maharashtra's go-to full-funnel growth partner — the team businesses call for content, automation, and infrastructure, not just social media posts." },
+                        { title: "Our Values", icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z", desc: "Integrity, ownership, and real results — we build our own products instead of reselling, and we measure success by whether your enquiries actually convert." },
+                        { title: "Our Edge", icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z", desc: "We own our own WhatsApp Business API product (OneClickMsg) and build our own websites and apps — proof we're a real technical team, not just a content shop." },
                     ].map((c, index) => (
                         <motion.div
                             key={c.title}
@@ -132,8 +135,8 @@ export function About() {
                         },
                         {
                             name: "Gajanan Chaudhari",
-                            role: "Creative Director",
-                            bio: "Full-stack developer passionate about creating seamless user experiences and scalable solutions.",
+                            role: "Technical Director",
+                            bio: "Full-stack developer building OneClickMsg and the websites/apps we deliver — passionate about seamless user experiences and scalable solutions.",
                             image: "/gajanan profile.jpg",
                             instagram: "https://www.instagram.com/gaju_2214?igsh=MTZva2oxNWJtNnZ2OQ==",
                             linkedin: "https://www.linkedin.com/in/gajanan-chaudhari-b37a41259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app "
