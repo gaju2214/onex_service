@@ -21,10 +21,10 @@ export const processSteps = [
 ]
 
 export const clientCategories = [
-    { label: "Coaching Institutes", icon: "GraduationCap" },
-    { label: "Clinics & Hospitals", icon: "Stethoscope" },
-    { label: "Real Estate", icon: "Building2" },
-    { label: "Restaurants", icon: "UtensilsCrossed" },
-    { label: "Retail & D2C", icon: "ShoppingBag" },
-    { label: "Wedding & Events", icon: "PartyPopper" },
+    { label: "Coaching Institutes", icon: "GraduationCap", to: "/for-coaching-institutes" },
+    { label: "Clinics & Hospitals", icon: "Stethoscope", to: "/for-clinics-hospitals" },
+    { label: "Real Estate", icon: "Building2", to: "/for-real-estate" },
+    { label: "Restaurants", icon: "UtensilsCrossed", to: "/for-restaurants" },
+    { label: "Retail & D2C", icon: "ShoppingBag", to: "/for-retail-d2c" },
+    { label: "Wedding & Events", icon: "PartyPopper", to: null },
 ]
