@@ -1,4 +1,5 @@
 import { SEO } from "../Components/SEO"
+import { localBusinessSchema } from "../data/schema"
 import { Hero } from "../Components/hero"
 import { ClientLogos } from "../Components/ClientLogos"
 import { ProcessFlow } from "../Components/ProcessFlow"
@@ -15,9 +16,10 @@ export function Home() {
     return (
         <>
             <SEO
-                title="Onex Service | Full-Funnel Growth Partner in Jalgaon"
-                description="Social media marketing, WhatsApp automation (OneClickMsg), and web/app development — the full growth funnel for businesses in Jalgaon and across India, under one roof."
-                keywords="full-funnel marketing agency Jalgaon, social media marketing agency Jalgaon, WhatsApp business API Jalgaon, WhatsApp automation, web development Jalgaon, digital marketing Jalgaon"
+                title="Onex Service | Social Media Marketing, WhatsApp API & Web Development in Jalgaon"
+                description="Onex Service is Jalgaon's full-funnel growth partner — social media marketing, WhatsApp Business API automation (OneClickMsg), and web/app development for businesses across Jalgaon and Maharashtra."
+                keywords="social media marketing agency Jalgaon, digital marketing agency Jalgaon, WhatsApp business API Jalgaon, WhatsApp automation Maharashtra, web development company Jalgaon, app development Jalgaon, full-funnel marketing agency Maharashtra, best digital marketing agency Jalgaon"
+                schema={localBusinessSchema}
             />
             <Hero />
             <ClientLogos />

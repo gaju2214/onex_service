@@ -19,15 +19,20 @@ const clients = [
 function LogoCard({ client }) {
     return (
         <div className="mx-3 flex min-h-28 w-36 flex-shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border border-border bg-foreground/5 px-3 py-3 backdrop-blur sm:mx-4 sm:min-h-32 sm:w-44 sm:px-4">
-            <img
-                src={client.logo}
-                alt={`${client.name} logo`}
-                className="h-10 w-10 rounded-full border border-border object-cover sm:h-12 sm:w-12"
-                loading="lazy"
-                onError={(e) => {
-                    e.currentTarget.style.display = "none"
-                }}
-            />
+            {/* Fixed white backdrop so logos with dark/transparent backgrounds
+                (common in client-supplied logo files) stay visible against
+                the site's dark theme instead of blending into the card. */}
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-white p-1.5 sm:h-14 sm:w-14">
+                <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                    onError={(e) => {
+                        e.currentTarget.parentElement.style.display = "none"
+                    }}
+                />
+            </div>
             <span className="text-center text-xs font-semibold leading-tight">{client.name}</span>
             <span className="text-xs text-foreground/60">{client.instagram}</span>
         </div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
-const headingText = "Jalgaon's Full-Funnel Growth Partner";
+const headingText = "Social Media, WhatsApp & Web Growth Partner in Jalgaon";
 
 const containerVariants = {
     hidden: {},
