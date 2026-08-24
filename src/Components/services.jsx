@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
-import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, MessageCircle } from "lucide-react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, MessageCircle, X } from "lucide-react"
 import { InstagramLogo, FacebookLogo, YoutubeLogo, GoogleLogo } from "./PlatformLogos"
 
 const items = [
@@ -41,13 +42,51 @@ const items = [
 ]
 
 const platforms = [
-    { name: "Instagram", Logo: InstagramLogo, description: "Visual storytelling and engagement" },
-    { name: "YouTube", Logo: YoutubeLogo, description: "Video marketing and channel growth" },
-    { name: "Facebook", Logo: FacebookLogo, description: "Community building and advertising" },
-    { name: "Google", Logo: GoogleLogo, description: "Search, Maps, and Google Ads visibility" },
+    {
+        name: "Instagram",
+        Logo: InstagramLogo,
+        description: "Visual storytelling and engagement",
+        details: [
+            "Reels, posts, and stories built for how people actually scroll",
+            "Consistent posting and community engagement",
+            "Meta ads management for reach and conversions",
+        ],
+    },
+    {
+        name: "YouTube",
+        Logo: YoutubeLogo,
+        description: "Video marketing and channel growth",
+        details: [
+            "Long-form and Shorts content strategy",
+            "Channel setup, branding, and optimization",
+            "Video editing built for retention and watch time",
+        ],
+    },
+    {
+        name: "Facebook",
+        Logo: FacebookLogo,
+        description: "Community building and advertising",
+        details: [
+            "Page management and community engagement",
+            "Targeted Facebook ad campaigns",
+            "Cross-posting with your Instagram content",
+        ],
+    },
+    {
+        name: "Google",
+        Logo: GoogleLogo,
+        description: "Search, Maps, and Google Ads visibility",
+        details: [
+            "Google Business Profile setup and optimization",
+            "Local SEO so you show up in Maps and search",
+            "Google Ads campaign management",
+        ],
+    },
 ]
 
 export function Services() {
+    const [activePlatform, setActivePlatform] = useState(null)
+
     return (
         <section id="services" className="scroll-mt-24 border-t border-border py-16 md:py-24" aria-label="Our Services">
             <div className="mx-auto max-w-6xl px-4">
@@ -122,13 +161,18 @@ export function Services() {
 
                 <div className="mt-6 flex flex-wrap justify-center gap-4 sm:gap-6">
                     {platforms.map((platform, i) => (
-                        <motion.div
+                        <motion.button
                             key={platform.name}
+                            type="button"
+                            layoutId={`platform-card-${platform.name}`}
+                            onClick={() => setActivePlatform(platform)}
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.45, delay: i * 0.1 }}
-                            className="group relative flex flex-col items-center rounded-2xl border border-border bg-foreground/5 p-4 shadow-inner backdrop-blur transition-transform hover:-translate-y-1"
+                            whileHover={{ y: -4 }}
+                            whileTap={{ scale: 0.96 }}
+                            className="group relative flex cursor-pointer flex-col items-center rounded-2xl border border-border bg-foreground/5 p-4 shadow-inner backdrop-blur transition-transform"
                         >
                             <motion.svg
                                 className="absolute inset-0 w-full h-full"
@@ -154,12 +198,56 @@ export function Services() {
                                     </linearGradient>
                                 </defs>
                             </motion.svg>
-                            <platform.Logo className="h-12 w-12" />
+                            <motion.div layoutId={`platform-logo-${platform.name}`}>
+                                <platform.Logo className="h-12 w-12" />
+                            </motion.div>
                             <span className="mt-2 text-sm font-semibold">{platform.name}</span>
-                        </motion.div>
+                        </motion.button>
                     ))}
                 </div>
             </div>
+
+            <AnimatePresence>
+                {activePlatform && (
+                    <motion.div
+                        className="fixed inset-0 z-[60] flex items-end justify-center bg-black/60 p-4 sm:items-center"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setActivePlatform(null)}
+                    >
+                        <motion.div
+                            layoutId={`platform-card-${activePlatform.name}`}
+                            className="relative w-full max-w-md rounded-2xl border border-border bg-background p-6 shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                type="button"
+                                onClick={() => setActivePlatform(null)}
+                                aria-label="Close"
+                                className="absolute right-4 top-4 rounded-lg p-1 text-foreground/60 transition hover:bg-foreground/10 hover:text-foreground"
+                            >
+                                <X className="h-5 w-5" />
+                            </button>
+
+                            <motion.div layoutId={`platform-logo-${activePlatform.name}`}>
+                                <activePlatform.Logo className="h-14 w-14" />
+                            </motion.div>
+                            <h3 className="mt-3 font-heading text-xl font-bold">{activePlatform.name}</h3>
+                            <p className="mt-1 text-sm text-foreground/70">{activePlatform.description}</p>
+
+                            <ul className="mt-4 space-y-2">
+                                {activePlatform.details.map((detail) => (
+                                    <li key={detail} className="flex items-start gap-2 text-sm text-foreground/80">
+                                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden="true" />
+                                        {detail}
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     )
 }
