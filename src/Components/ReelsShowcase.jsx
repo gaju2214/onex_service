@@ -7,6 +7,9 @@ import { chunk } from "../lib/utils"
 // Real reel links, sourced from public/reel.txt. Per-reel client/result
 // mapping wasn't supplied, so captions stay generic until that's available.
 const reels = [
+    { permalink: "https://www.instagram.com/reel/Db-ydelt6KD/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/Db5MbEWubPv/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
+    { permalink: "https://www.instagram.com/reel/DcSFz31tSHM/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
     { permalink: "https://www.instagram.com/reel/DbD3m5QI8-U/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
     { permalink: "https://www.instagram.com/reel/DaSwzylt-Uy/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
     { permalink: "https://www.instagram.com/reel/DbRwwC4obuS/", clientName: "Client Campaign Reel", resultCaption: "Real client content" },
