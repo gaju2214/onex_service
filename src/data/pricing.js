@@ -17,7 +17,7 @@ export const pricingTiers = [
             { label: "Influencer promo shoot", value: "1 included" },
             { label: "WhatsApp API", value: "Included, renews with your plan" },
             { label: "Website", value: "Not included" },
-            { label: "Account management", value: "Email support" },
+            { label: "Account management", value: "Email & phone support" },
         ],
     },
     {
@@ -32,7 +32,7 @@ export const pricingTiers = [
             { label: "Influencer promo shoot", value: "2 included" },
             { label: "WhatsApp API", value: "6-month subscription (renewable)" },
             { label: "Website", value: "Not included" },
-            { label: "Account management", value: "Dedicated WhatsApp support" },
+            { label: "Account management", value: "Dedicated WhatsApp & phone support" },
         ],
     },
     {
@@ -47,7 +47,7 @@ export const pricingTiers = [
             { label: "Influencer promo shoot", value: "3 included" },
             { label: "WhatsApp API", value: "1-year subscription" },
             { label: "Website", value: "Full website included*" },
-            { label: "Account management", value: "Dedicated account manager" },
+            { label: "Account management", value: "Dedicated account manager + phone support" },
         ],
     },
 ]
