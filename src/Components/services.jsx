@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, MessageCircle, X } from "lucide-react"
 import { InstagramLogo, FacebookLogo, YoutubeLogo, GoogleLogo } from "./PlatformLogos"
@@ -85,8 +85,39 @@ const platforms = [
     },
 ]
 
+// Shared spring used for the icon-to-popup morph, so the card and its
+// logo animate in lockstep instead of the default (slightly floatier)
+// layout transition.
+const morphTransition = { type: "spring", stiffness: 380, damping: 32, mass: 0.6 }
+
+const contentContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.05, delayChildren: 0.15 } },
+}
+
+const contentItem = {
+    hidden: { opacity: 0, y: 8 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
+}
+
 export function Services() {
     const [activePlatform, setActivePlatform] = useState(null)
+
+    useEffect(() => {
+        document.body.style.overflow = activePlatform ? "hidden" : ""
+        return () => {
+            document.body.style.overflow = ""
+        }
+    }, [activePlatform])
+
+    useEffect(() => {
+        if (!activePlatform) return
+        const onKeyDown = (e) => {
+            if (e.key === "Escape") setActivePlatform(null)
+        }
+        window.addEventListener("keydown", onKeyDown)
+        return () => window.removeEventListener("keydown", onKeyDown)
+    }, [activePlatform])
 
     return (
         <section id="services" className="scroll-mt-24 border-t border-border py-16 md:py-24" aria-label="Our Services">
@@ -170,7 +201,7 @@ export function Services() {
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.45, delay: i * 0.1 }}
+                            transition={{ opacity: { duration: 0.45, delay: i * 0.1 }, scale: { duration: 0.45, delay: i * 0.1 }, layout: morphTransition }}
                             whileHover={{ y: -4 }}
                             whileTap={{ scale: 0.96 }}
                             className="group relative flex cursor-pointer flex-col items-center rounded-2xl border border-border bg-foreground/5 p-4 shadow-inner backdrop-blur transition-transform"
@@ -199,7 +230,7 @@ export function Services() {
                                     </linearGradient>
                                 </defs>
                             </motion.svg>
-                            <motion.div layoutId={`platform-logo-${platform.name}`}>
+                            <motion.div layoutId={`platform-logo-${platform.name}`} transition={morphTransition}>
                                 <platform.Logo className="h-12 w-12" />
                             </motion.div>
                             <span className="mt-2 text-sm font-semibold">{platform.name}</span>
@@ -211,14 +242,16 @@ export function Services() {
             <AnimatePresence>
                 {activePlatform && (
                     <motion.div
-                        className="fixed inset-0 z-[60] flex items-end justify-center bg-black/60 p-4 sm:items-center"
+                        className="fixed inset-0 z-[60] flex items-end justify-center bg-black/60 p-4 backdrop-blur-sm sm:items-center"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
                         onClick={() => setActivePlatform(null)}
                     >
                         <motion.div
                             layoutId={`platform-card-${activePlatform.name}`}
+                            transition={morphTransition}
                             className="relative w-full max-w-md rounded-2xl border border-border bg-background p-6 shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -231,20 +264,35 @@ export function Services() {
                                 <X className="h-5 w-5" />
                             </button>
 
-                            <motion.div layoutId={`platform-logo-${activePlatform.name}`}>
+                            <motion.div layoutId={`platform-logo-${activePlatform.name}`} transition={morphTransition}>
                                 <activePlatform.Logo className="h-14 w-14" />
                             </motion.div>
-                            <h3 className="mt-3 font-heading text-xl font-bold">{activePlatform.name}</h3>
-                            <p className="mt-1 text-sm text-foreground/70">{activePlatform.description}</p>
 
-                            <ul className="mt-4 space-y-2">
-                                {activePlatform.details.map((detail) => (
-                                    <li key={detail} className="flex items-start gap-2 text-sm text-foreground/80">
-                                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden="true" />
-                                        {detail}
-                                    </li>
-                                ))}
-                            </ul>
+                            <motion.div
+                                variants={contentContainer}
+                                initial="hidden"
+                                animate="visible"
+                            >
+                                <motion.h3 variants={contentItem} className="mt-3 font-heading text-xl font-bold">
+                                    {activePlatform.name}
+                                </motion.h3>
+                                <motion.p variants={contentItem} className="mt-1 text-sm text-foreground/70">
+                                    {activePlatform.description}
+                                </motion.p>
+
+                                <ul className="mt-4 space-y-2">
+                                    {activePlatform.details.map((detail) => (
+                                        <motion.li
+                                            key={detail}
+                                            variants={contentItem}
+                                            className="flex items-start gap-2 text-sm text-foreground/80"
+                                        >
+                                            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--brand-gold)]" aria-hidden="true" />
+                                            {detail}
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                            </motion.div>
                         </motion.div>
                     </motion.div>
                 )}
