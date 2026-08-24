@@ -1,8 +1,6 @@
 import { useEffect } from "react"
 import { motion } from "framer-motion"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 import { loadInstagramEmbedScript } from "../lib/instagramEmbed"
-import { chunk } from "../lib/utils"
 
 // Real client Instagram handles, same source as ClientLogos.jsx
 // (public/clients_logo/clients_details).
@@ -11,8 +9,6 @@ const profiles = [
     { name: "Louis Creation", handle: "louis_creation" },
     { name: "The Kidszone", handle: "thekidszone_jalgaon" },
 ]
-
-const PROFILES_PER_SLIDE = 3
 
 function ProfileCard({ profile, i }) {
     return (
@@ -62,22 +58,10 @@ export function InstagramProfiles() {
                     Real client profiles we manage, embedded live from Instagram.
                 </p>
 
-                <div className="mt-8">
-                    <Carousel opts={{ align: "start", autoPlay: false }}>
-                        <CarouselContent>
-                            {chunk(profiles, PROFILES_PER_SLIDE).map((group, groupIndex) => (
-                                <CarouselItem key={group[0].handle} className="basis-full">
-                                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                        {group.map((profile, i) => (
-                                            <ProfileCard key={profile.handle} profile={profile} i={groupIndex * PROFILES_PER_SLIDE + i} />
-                                        ))}
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="left-2" />
-                        <CarouselNext className="right-2" />
-                    </Carousel>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {profiles.map((profile, i) => (
+                        <ProfileCard key={profile.handle} profile={profile} i={i} />
+                    ))}
                 </div>
             </div>
         </section>
