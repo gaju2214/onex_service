@@ -43,6 +43,18 @@ export function YoutubeLogo({ className }) {
     )
 }
 
+export function LinkedinLogo({ className }) {
+    return (
+        <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+            <rect width="24" height="24" rx="4" fill="#0A66C2" />
+            <path
+                fill="white"
+                d="M7.5 9.5h2.7v8.3H7.5zM8.85 8.3a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zM12.3 9.5h2.6v1.14h.04c.36-.68 1.25-1.4 2.57-1.4 2.75 0 3.26 1.8 3.26 4.15v4.41h-2.7v-3.91c0-.93-.02-2.13-1.3-2.13-1.3 0-1.5 1.02-1.5 2.06v3.98h-2.7z"
+            />
+        </svg>
+    )
+}
+
 export function GoogleLogo({ className }) {
     return (
         <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
