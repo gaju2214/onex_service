@@ -13,6 +13,16 @@ function setMetaTag(name, content) {
     tag.setAttribute("content", content)
 }
 
+function setPropertyTag(property, content) {
+    let tag = document.querySelector(`meta[property="${property}"]`)
+    if (!tag) {
+        tag = document.createElement("meta")
+        tag.setAttribute("property", property)
+        document.head.appendChild(tag)
+    }
+    tag.setAttribute("content", content)
+}
+
 function setCanonical(path) {
     let link = document.querySelector('link[rel="canonical"]')
     if (!link) {
@@ -38,16 +48,30 @@ function setJsonLd(schema) {
     script.textContent = JSON.stringify(schema)
 }
 
-export function SEO({ title, description, keywords, schema }) {
+export function SEO({ title, description, keywords, schema, image }) {
     useEffect(() => {
-        if (title) document.title = title
-        if (description) setMetaTag("description", description)
+        if (title) {
+            document.title = title
+            setPropertyTag("og:title", title)
+            setMetaTag("twitter:title", title)
+        }
+        if (description) {
+            setMetaTag("description", description)
+            setPropertyTag("og:description", description)
+            setMetaTag("twitter:description", description)
+        }
         if (keywords) setMetaTag("keywords", keywords)
-        setCanonical(window.location.pathname)
+
+        const path = window.location.pathname
+        setCanonical(path)
+        setPropertyTag("og:url", `${SITE_URL}${path}`)
+        setPropertyTag("og:image", image || `${SITE_URL}/logo3.png`)
+        setMetaTag("twitter:image", image || `${SITE_URL}/logo3.png`)
+
         setJsonLd(schema)
 
         return () => setJsonLd(null)
-    }, [title, description, keywords, schema])
+    }, [title, description, keywords, schema, image])
 
     return null
 }
