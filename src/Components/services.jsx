@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
-import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, Instagram, Youtube, Facebook, MessageCircle } from "lucide-react"
+import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, MessageCircle } from "lucide-react"
+import { InstagramLogo, FacebookLogo, YoutubeLogo, GoogleLogo } from "./PlatformLogos"
 
 const items = [
     {
@@ -40,9 +41,10 @@ const items = [
 ]
 
 const platforms = [
-    { name: "Instagram", icon: Instagram, color: "#bc1888", description: "Visual storytelling and engagement" },
-    { name: "YouTube", icon: Youtube, color: "#FF0000", description: "Video marketing and channel growth" },
-    { name: "Facebook", icon: Facebook, color: "#1877F2", description: "Community building and advertising" },
+    { name: "Instagram", Logo: InstagramLogo, description: "Visual storytelling and engagement" },
+    { name: "YouTube", Logo: YoutubeLogo, description: "Video marketing and channel growth" },
+    { name: "Facebook", Logo: FacebookLogo, description: "Community building and advertising" },
+    { name: "Google", Logo: GoogleLogo, description: "Search, Maps, and Google Ads visibility" },
 ]
 
 export function Services() {
@@ -118,7 +120,7 @@ export function Services() {
                     Platform Services
                 </motion.h3>
 
-                <div className="mt-6 flex justify-center gap-6">
+                <div className="mt-6 flex flex-wrap justify-center gap-4 sm:gap-6">
                     {platforms.map((platform, i) => (
                         <motion.div
                             key={platform.name}
@@ -152,7 +154,7 @@ export function Services() {
                                     </linearGradient>
                                 </defs>
                             </motion.svg>
-                            <platform.icon className="h-12 w-12" style={platform.gradient ? { background: platform.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' } : { color: platform.color }} />
+                            <platform.Logo className="h-12 w-12" />
                             <span className="mt-2 text-sm font-semibold">{platform.name}</span>
                         </motion.div>
                     ))}
