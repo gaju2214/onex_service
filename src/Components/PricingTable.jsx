@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { Check } from "lucide-react"
+import { Check, X } from "lucide-react"
 import { pricingTiers, pricingFootnote } from "../data/pricing"
 
 export function PricingTable() {
@@ -38,15 +38,24 @@ export function PricingTable() {
                             </div>
 
                             <ul className="mt-6 flex-1 space-y-3">
-                                {tier.features.map((feature) => (
-                                    <li key={feature.label} className="flex items-start gap-2 text-sm">
-                                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--brand-gold)]" aria-hidden="true" />
-                                        <span>
-                                            <span className="font-semibold">{feature.label}:</span>{" "}
-                                            <span className="text-foreground/80">{feature.value}</span>
-                                        </span>
-                                    </li>
-                                ))}
+                                {tier.features.map((feature) => {
+                                    const notIncluded = feature.value.trim().toLowerCase() === "not included"
+                                    return (
+                                        <li key={feature.label} className="flex items-start gap-2 text-sm">
+                                            {notIncluded ? (
+                                                <X className="mt-0.5 h-4 w-4 flex-shrink-0 text-destructive" aria-hidden="true" />
+                                            ) : (
+                                                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--brand-gold)]" aria-hidden="true" />
+                                            )}
+                                            <span>
+                                                <span className="font-semibold">{feature.label}:</span>{" "}
+                                                <span className={notIncluded ? "text-foreground/50" : "text-foreground/80"}>
+                                                    {feature.value}
+                                                </span>
+                                            </span>
+                                        </li>
+                                    )
+                                })}
                             </ul>
 
                             <Link
