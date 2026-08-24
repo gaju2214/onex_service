@@ -131,7 +131,7 @@ export function About() {
                             role: "Creative Director",
                             bio: "Leading design innovation with 10+ years of experience in branding and visual storytelling.",
                             image: "/jayesh profile.jpg",
-                            instagram: " https://www.instagram.com/ig.jayuu?igsh=MWN2ajhqc2Ruam1qcg== ",
+                            instagram: "https://www.instagram.com/ig.jayyu",
                             linkedin: " https://in.linkedin.com/in/jayesh-gajanan-dhamale-991264327?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile  "
                         },
                         {
@@ -139,7 +139,7 @@ export function About() {
                             role: "Technical Director",
                             bio: "Full-stack developer building OneClickMsg and the websites/apps we deliver — passionate about seamless user experiences and scalable solutions.",
                             image: "/gajanan profile.jpg",
-                            instagram: "https://www.instagram.com/gaju_2214?igsh=MTZva2oxNWJtNnZ2OQ==",
+                            instagram: "https://www.instagram.com/gaju2214_",
                             linkedin: "https://www.linkedin.com/in/gajanan-chaudhari-b37a41259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app "
                         },
 
