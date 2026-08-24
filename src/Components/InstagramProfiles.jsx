@@ -8,16 +8,8 @@ import { chunk } from "../lib/utils"
 // (public/clients_logo/clients_details).
 const profiles = [
     { name: "Maharaj Wholesale", handle: "maharaj.wholesale_official" },
-    { name: "Peehus Rasoi", handle: "peehus.rasoi_333" },
-    { name: "The Kidszone", handle: "thekidszone_jalgaon" },
-    { name: "The Baithak Bar & Restro", handle: "thebaithak.jalgaon" },
-    { name: "Hotel Shree Gajanan", handle: "hotel.shreegajanan" },
-    { name: "Navid Sofa", handle: "navidsofa" },
-    { name: "Aanand Saw Mill", handle: "asmwoodwork" },
-    { name: "ShopGrow", handle: "shopgrow.in" },
-    { name: "Kaviesh Creations, Pune", handle: "kaviesh_creations" },
-    { name: "Rita Bhalla Kitchen", handle: "ritabhalla.kitchen" },
     { name: "Louis Creation", handle: "louis_creation" },
+    { name: "The Kidszone", handle: "thekidszone_jalgaon" },
 ]
 
 const PROFILES_PER_SLIDE = 3
