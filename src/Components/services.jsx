@@ -1,14 +1,19 @@
 import { motion } from "framer-motion"
-import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, Instagram, Youtube, Facebook } from "lucide-react"
+import { PenTool, Globe, Code, Share2, ClipboardList, Users, Megaphone, Instagram, Youtube, Facebook, MessageCircle } from "lucide-react"
 
 const items = [
-    { 
-        title: "Original Content Creation", 
+    {
+        title: "Original Content Creation",
         icon: PenTool,
         description: "Craft compelling blogs, videos, infographics, and visual content that resonates with your audience and drives engagement across all digital platforms."
     },
-    { 
-        title: "Multiple Marketing Platforms", 
+    {
+        title: "WhatsApp Business API",
+        icon: MessageCircle,
+        description: "OneClickMsg, our in-house WhatsApp Business API product — bulk messaging, automation, and broadcast on the official Meta Cloud API, turning attention into conversations."
+    },
+    {
+        title: "Multiple Marketing Platforms",
         icon: Globe,
         description: "Strategic multi-channel presence across search engines, social media, email, and paid advertising to maximize your brand's reach and visibility."
     },
