@@ -12,8 +12,8 @@ export const pricingTiers = [
         tagline: "Get found online — content and presence basics.",
         featured: false,
         features: [
-            { label: "Content volume", value: "8 posts + 8 reels / month" },
-            { label: "Ads management", value: "Not included" },
+            { label: "Content volume", value: "4 posts + 4 reels / month" },
+            { label: "Ads management", value: "As per requirement + SC" },
             { label: "Influencer promo shoot", value: "1 included" },
             { label: "WhatsApp API", value: "Not included" },
             { label: "Website", value: "Not included" },
@@ -27,7 +27,7 @@ export const pricingTiers = [
         tagline: "Content, ads, and WhatsApp automation working together.",
         featured: true,
         features: [
-            { label: "Content volume", value: "16 posts + 15 reels / month" },
+            { label: "Content volume", value: "8 posts + 8 reels / month" },
             { label: "Ads management", value: "Meta ads included" },
             { label: "Influencer promo shoot", value: "2 included" },
             { label: "WhatsApp API", value: "6-month subscription" },
@@ -37,12 +37,12 @@ export const pricingTiers = [
     },
     {
         name: "Full-Funnel",
-        price: "29,999",
+        price: "24,999",
         period: "/month",
         tagline: "The complete system — attention, conversion, infrastructure.",
         featured: false,
         features: [
-            { label: "Content volume", value: "Unlimited posts* + 20 reels / month" },
+            { label: "Content volume", value: "Daily posts* + 15 reels / month" },
             { label: "Ads management", value: "Meta ads, fully managed" },
             { label: "Influencer promo shoot", value: "3 included" },
             { label: "WhatsApp API", value: "1-year subscription" },
