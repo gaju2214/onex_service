@@ -75,11 +75,12 @@ const platforms = [
     {
         name: "Google",
         Logo: GoogleLogo,
-        description: "Search, Maps, and Google Ads visibility",
+        description: "Search, Maps, Google Ads, and web design",
         details: [
             "Google Business Profile setup and optimization",
             "Local SEO so you show up in Maps and search",
             "Google Ads campaign management",
+            "Web design built to rank and convert search traffic",
         ],
     },
 ]
