@@ -62,6 +62,10 @@ export function PricingTable({ tiers = defaultPricingTiers, footnote = pricingFo
                                 })}
                             </ul>
 
+                            {tier.note && (
+                                <p className="mt-4 text-xs text-foreground/60">{tier.note}</p>
+                            )}
+
                             <Link
                                 to={tier.customQuote ? "/contact" : "/free-audit"}
                                 className={[
