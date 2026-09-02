@@ -83,7 +83,7 @@ export const webDevPricingTiers = [
             { label: "Custom features", value: "Bookings, payments, dashboards, and more" },
             { label: "CMS / admin panel", value: "Included" },
             { label: "Database & backend", value: "Included" },
-            { label: "Integrations", value: "WhatsApp API, payment gateways, and more" },
+            { label: "Integrations", value: "WhatsApp API, payment gateways, and more — as per requirement" },
             { label: "Support", value: "Dedicated account manager + phone support" },
         ],
     },
