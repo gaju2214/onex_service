@@ -64,7 +64,7 @@ export const webDevPricingTiers = [
         customQuote: false,
         features: [
             { label: "Site type", value: "Static website" },
-            { label: "Pages", value: "Up to 5 pages" },
+            { label: "Pages", value: "Up to 4 pages" },
             { label: "Design", value: "Mobile-responsive, custom design" },
             { label: "Hosting & domain setup", value: "Included" },
             { label: "CMS / admin panel", value: "Not included" },
