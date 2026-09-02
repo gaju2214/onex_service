@@ -42,6 +42,7 @@ export const pricingTiers = [
         period: "/month",
         tagline: "The complete system — attention, conversion, infrastructure.",
         featured: false,
+        note: "On quarterly or yearly subscriptions, the 2 influencer promo shoots are included every month at no extra charge.",
         features: [
             { label: "Content volume", value: "Daily posts* + 15 reels / month" },
             { label: "Ads management", value: "Meta ads, fully managed" },
