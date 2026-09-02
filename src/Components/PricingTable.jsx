@@ -1,14 +1,14 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { Check, X } from "lucide-react"
-import { pricingTiers, pricingFootnote } from "../data/pricing"
+import { pricingTiers as defaultPricingTiers, pricingFootnote } from "../data/pricing"
 
-export function PricingTable() {
+export function PricingTable({ tiers = defaultPricingTiers, footnote = pricingFootnote }) {
     return (
         <section className="py-16 md:py-24" aria-label="Pricing Tiers">
             <div className="mx-auto max-w-6xl px-4">
                 <div className="grid gap-6 lg:grid-cols-3">
-                    {pricingTiers.map((tier, i) => (
+                    {tiers.map((tier, i) => (
                         <motion.div
                             key={tier.name}
                             className={[
@@ -30,11 +30,15 @@ export function PricingTable() {
                             <div className="text-lg font-bold font-heading">{tier.name}</div>
                             <p className="mt-1 text-sm text-foreground/70">{tier.tagline}</p>
                             <div className="mt-4 flex items-baseline gap-1">
-                                <span className="text-sm text-foreground/70">Starting from</span>
+                                <span className="text-sm text-foreground/70">
+                                    {tier.customQuote ? "Custom pricing" : "Starting from"}
+                                </span>
                             </div>
                             <div className="flex items-baseline gap-1">
-                                <span className="text-3xl font-extrabold font-heading">₹{tier.price}</span>
-                                <span className="text-sm text-foreground/70">{tier.period}</span>
+                                <span className="text-3xl font-extrabold font-heading">
+                                    {tier.customQuote ? tier.price : `₹${tier.price}`}
+                                </span>
+                                {tier.period && <span className="text-sm text-foreground/70">{tier.period}</span>}
                             </div>
 
                             <ul className="mt-6 flex-1 space-y-3">
@@ -59,7 +63,7 @@ export function PricingTable() {
                             </ul>
 
                             <Link
-                                to="/free-audit"
+                                to={tier.customQuote ? "/contact" : "/free-audit"}
                                 className={[
                                     "mt-6 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5",
                                     tier.featured
@@ -67,12 +71,12 @@ export function PricingTable() {
                                         : "text-foreground ring-1 ring-border hover:bg-foreground/5",
                                 ].join(" ")}
                             >
-                                Get Started →
+                                {tier.customQuote ? "Contact Us →" : "Get Started →"}
                             </Link>
                         </motion.div>
                     ))}
                 </div>
-                <p className="mt-6 text-center text-xs text-foreground/60">{pricingFootnote}</p>
+                <p className="mt-6 text-center text-xs text-foreground/60">{footnote}</p>
             </div>
         </section>
     )

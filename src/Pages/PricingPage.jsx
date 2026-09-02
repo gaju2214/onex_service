@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { SEO } from "../Components/SEO"
 import { PricingTable } from "../Components/PricingTable"
 import { ServiceCTA } from "../Components/ServiceCTA"
-import { pricingCustomNote } from "../data/pricing"
+import { pricingCustomNote, webDevPricingTiers } from "../data/pricing"
 
 export function PricingPage() {
     return (
@@ -37,6 +37,18 @@ export function PricingPage() {
                 </div>
             </section>
 
+            <div className="mx-auto max-w-3xl px-4 text-center">
+                <motion.h2
+                    className="font-heading text-2xl font-bold md:text-3xl"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Growth Bundle Plans
+                </motion.h2>
+            </div>
+
             <PricingTable />
 
             <div className="mx-auto max-w-2xl px-4 pb-16 text-center md:pb-24">
@@ -50,6 +62,32 @@ export function PricingPage() {
                     {pricingCustomNote}
                 </motion.p>
             </div>
+
+            <section className="border-t border-border pt-16 md:pt-24" aria-label="Web Development Plans">
+                <div className="mx-auto max-w-3xl px-4 text-center">
+                    <motion.h2
+                        className="font-heading text-2xl font-bold md:text-3xl"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.4 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        Web Development <span className="text-[var(--brand-gold)]">Plans</span>
+                    </motion.h2>
+                    <motion.p
+                        className="mx-auto mt-4 max-w-2xl text-sm text-foreground/80 md:text-base"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.4 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                        Need just a website or app, without the full Growth Bundle? Pick the plan that
+                        matches what you need — from a simple static site to a full custom web application.
+                    </motion.p>
+                </div>
+            </section>
+
+            <PricingTable tiers={webDevPricingTiers} footnote="*Final pricing depends on scope — contact us for an exact quote." />
 
             <section className="border-t border-border py-16 md:py-24" aria-label="Why These Packages">
                 <div className="mx-auto max-w-3xl px-4 text-center">
