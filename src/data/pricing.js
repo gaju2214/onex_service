@@ -70,22 +70,6 @@ export const webDevPricingTiers = [
         ],
     },
     {
-        name: "Dynamic",
-        price: "Contact Us",
-        period: "",
-        tagline: "A dynamic website with database-driven content and admin control.",
-        featured: false,
-        customQuote: true,
-        features: [
-            { label: "Site type", value: "Dynamic website" },
-            { label: "Pages", value: "As per requirement" },
-            { label: "CMS / admin panel", value: "Included" },
-            { label: "Database & backend", value: "Included" },
-            { label: "Hosting & domain setup", value: "Included" },
-            { label: "Support", value: "Dedicated phone support" },
-        ],
-    },
-    {
         name: "Growth",
         price: "Contact Us",
         period: "",
