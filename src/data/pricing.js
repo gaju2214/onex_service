@@ -29,7 +29,7 @@ export const pricingTiers = [
         featured: true,
         whatsappCta: true,
         features: [
-            { label: "Content volume", value: "6 posts + 6 reels / month" },
+            { label: "Content volume", value: "6 posts + 9 reels / month" },
             { label: "Ads management", value: "Meta ads included" },
             { label: "Influencer promo shoot", value: "2 included" },
             { label: "WhatsApp API", value: "6-month subscription (renewable)" },
