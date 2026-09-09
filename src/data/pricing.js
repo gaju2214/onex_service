@@ -40,11 +40,10 @@ export const pricingTiers = [
     },
     {
         name: "Full-Funnel",
-        price: "?",
-        period: "",
+        price: "24,999",
+        period: "/month",
         tagline: "The complete system — attention, conversion, infrastructure.",
         featured: false,
-        customQuote: true,
         note: "On quarterly or yearly subscriptions, the 2 influencer promo shoots are included every month at no extra charge.",
         whatsappCta: true,
         features: [
@@ -54,6 +53,23 @@ export const pricingTiers = [
             { label: "WhatsApp API", value: "1-year subscription" },
             { label: "Website", value: "Full website included*" },
             { label: "Account management", value: "Dedicated account manager + phone support" },
+        ],
+    },
+    {
+        name: "Customize Your Package",
+        price: "?",
+        period: "",
+        tagline: "Tell us what you need — we'll build a plan around it.",
+        featured: false,
+        customQuote: true,
+        whatsappCta: true,
+        features: [
+            { label: "Content volume", value: "As per your requirement" },
+            { label: "Ads management", value: "As per your requirement" },
+            { label: "Influencer promo shoot", value: "As per your requirement" },
+            { label: "WhatsApp API", value: "As per your requirement" },
+            { label: "Website", value: "As per your requirement" },
+            { label: "Account management", value: "As per your requirement" },
         ],
     },
 ]
