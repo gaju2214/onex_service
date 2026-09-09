@@ -27,7 +27,6 @@ export const pricingTiers = [
         period: "/month",
         tagline: "Content, ads, and WhatsApp automation working together.",
         featured: true,
-        note: "On quarterly or yearly subscriptions, the 2 influencer promo shoots are included every month at no extra charge.",
         whatsappCta: true,
         features: [
             { label: "Content volume", value: "6 posts + 6 reels / month" },
@@ -44,7 +43,6 @@ export const pricingTiers = [
         period: "/month",
         tagline: "The complete system — attention, conversion, infrastructure.",
         featured: false,
-        note: "On quarterly or yearly subscriptions, the 2 influencer promo shoots are included every month at no extra charge.",
         whatsappCta: true,
         features: [
             { label: "Content volume", value: "9 posts + 15 reels / month" },
