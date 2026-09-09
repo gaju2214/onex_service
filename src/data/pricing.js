@@ -114,7 +114,6 @@ export const webDevPricingTiers = [
         customQuote: true,
         features: [
             { label: "Site type", value: "Website or app, tailored to your business" },
-            { label: "Content & ads", value: "Included, as part of Growth Bundle" },
             { label: "Features", value: "All included from Growth plan" },
             { label: "WhatsApp API", value: "Included" },
             { label: "CMS / admin panel", value: "Included" },
