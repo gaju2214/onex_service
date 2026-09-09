@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import { Check, X } from "lucide-react"
 import { pricingTiers as defaultPricingTiers, pricingFootnote } from "../data/pricing"
 
+const WHATSAPP_NUMBER = "917875359828"
+
 export function PricingTable({ tiers = defaultPricingTiers, footnote = pricingFootnote }) {
     return (
         <section className="py-16 md:py-24" aria-label="Pricing Tiers">
@@ -35,7 +37,13 @@ export function PricingTable({ tiers = defaultPricingTiers, footnote = pricingFo
                                 </span>
                             </div>
                             <div className="flex items-baseline gap-1">
-                                <span className="text-3xl font-extrabold font-heading">
+                                <span
+                                    className={
+                                        tier.price === "?"
+                                            ? "text-5xl font-extrabold font-heading text-[var(--brand-gold)]"
+                                            : "text-3xl font-extrabold font-heading"
+                                    }
+                                >
                                     {tier.customQuote ? tier.price : `₹${tier.price}`}
                                 </span>
                                 {tier.period && <span className="text-sm text-foreground/70">{tier.period}</span>}
@@ -66,17 +74,37 @@ export function PricingTable({ tiers = defaultPricingTiers, footnote = pricingFo
                                 <p className="mt-4 text-xs text-foreground/60">{tier.note}</p>
                             )}
 
-                            <Link
-                                to={tier.customQuote ? "/contact" : "/free-audit"}
-                                className={[
-                                    "mt-6 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5",
-                                    tier.featured
-                                        ? "text-[#1a1a1a] bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
-                                        : "text-foreground ring-1 ring-border hover:bg-foreground/5",
-                                ].join(" ")}
-                            >
-                                {tier.customQuote ? "Contact Us →" : "Get Started →"}
-                            </Link>
+                            {tier.whatsappCta ? (
+                                <a
+                                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                                        tier.customQuote
+                                            ? `Hi! I'm interested in the ${tier.name} package. Please share pricing and more details.`
+                                            : `Hi! I'm interested in the ${tier.name} package (₹${tier.price}${tier.period}). Please share more details.`
+                                    )}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={[
+                                        "mt-6 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5",
+                                        tier.featured
+                                            ? "text-[#1a1a1a] bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
+                                            : "text-foreground ring-1 ring-border hover:bg-foreground/5",
+                                    ].join(" ")}
+                                >
+                                    Enquire on WhatsApp →
+                                </a>
+                            ) : (
+                                <Link
+                                    to={tier.customQuote ? "/contact" : "/free-audit"}
+                                    className={[
+                                        "mt-6 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5",
+                                        tier.featured
+                                            ? "text-[#1a1a1a] bg-gradient-to-r from-[#E8C077] to-[var(--brand-gold)]"
+                                            : "text-foreground ring-1 ring-border hover:bg-foreground/5",
+                                    ].join(" ")}
+                                >
+                                    {tier.customQuote ? "Contact Us →" : "Get Started →"}
+                                </Link>
+                            )}
                         </motion.div>
                     ))}
                 </div>
