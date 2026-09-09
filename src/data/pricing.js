@@ -30,7 +30,7 @@ export const pricingTiers = [
         note: "On quarterly or yearly subscriptions, the 2 influencer promo shoots are included every month at no extra charge.",
         whatsappCta: true,
         features: [
-            { label: "Content volume", value: "8 posts + 8 reels / month" },
+            { label: "Content volume", value: "6 posts + 6 reels / month" },
             { label: "Ads management", value: "Meta ads included" },
             { label: "Influencer promo shoot", value: "2 included" },
             { label: "WhatsApp API", value: "6-month subscription (renewable)" },
@@ -47,7 +47,7 @@ export const pricingTiers = [
         note: "On quarterly or yearly subscriptions, the 2 influencer promo shoots are included every month at no extra charge.",
         whatsappCta: true,
         features: [
-            { label: "Content volume", value: "Daily posts* + 15 reels / month" },
+            { label: "Content volume", value: "9 posts + 15 reels / month" },
             { label: "Ads management", value: "Meta ads, fully managed" },
             { label: "Influencer promo shoot", value: "3 included" },
             { label: "WhatsApp API", value: "1-year subscription" },
