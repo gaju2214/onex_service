@@ -9,7 +9,7 @@ export function PricingTable({ tiers = defaultPricingTiers, footnote = pricingFo
     return (
         <section className="py-16 md:py-24" aria-label="Pricing Tiers">
             <div className="mx-auto max-w-6xl px-4">
-                <div className="grid gap-6 lg:grid-cols-3">
+                <div className={tiers.length === 1 ? "mx-auto grid max-w-md gap-6" : "grid gap-6 lg:grid-cols-3"}>
                     {tiers.map((tier, i) => (
                         <motion.div
                             key={tier.name}
@@ -31,23 +31,27 @@ export function PricingTable({ tiers = defaultPricingTiers, footnote = pricingFo
                             )}
                             <div className="text-lg font-bold font-heading">{tier.name}</div>
                             <p className="mt-1 text-sm text-foreground/70">{tier.tagline}</p>
-                            <div className="mt-4 flex items-baseline gap-1">
-                                <span className="text-sm text-foreground/70">
-                                    {tier.customQuote ? "Custom pricing" : "Starting from"}
-                                </span>
-                            </div>
-                            <div className="flex items-baseline gap-1">
-                                <span
-                                    className={
-                                        tier.price === "?"
-                                            ? "text-5xl font-extrabold font-heading text-[var(--brand-gold)]"
-                                            : "text-3xl font-extrabold font-heading"
-                                    }
-                                >
-                                    {tier.customQuote ? tier.price : `₹${tier.price}`}
-                                </span>
-                                {tier.period && <span className="text-sm text-foreground/70">{tier.period}</span>}
-                            </div>
+                            {tier.price && (
+                                <>
+                                    <div className="mt-4 flex items-baseline gap-1">
+                                        <span className="text-sm text-foreground/70">
+                                            {tier.customQuote ? "Custom pricing" : "Starting from"}
+                                        </span>
+                                    </div>
+                                    <div className="flex items-baseline gap-1">
+                                        <span
+                                            className={
+                                                tier.price === "?"
+                                                    ? "text-5xl font-extrabold font-heading text-[var(--brand-gold)]"
+                                                    : "text-3xl font-extrabold font-heading"
+                                            }
+                                        >
+                                            {tier.customQuote ? tier.price : `₹${tier.price}`}
+                                        </span>
+                                        {tier.period && <span className="text-sm text-foreground/70">{tier.period}</span>}
+                                    </div>
+                                </>
+                            )}
 
                             <ul className="mt-6 flex-1 space-y-3">
                                 {tier.features.map((feature) => {
